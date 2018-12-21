@@ -12,6 +12,7 @@ services:
       - BUNDLE_DATA=/gems
     volumes:
       - .:/usr/src/app
+      - ../jekyll-fssio-theme:/usr/src/jekyll-fssio-theme
       - ./docker-data/irb-history:/root/.irb-history
       - gems_cache:/gems:delegated
       - node_modules_cache:/usr/src/node_modules
