@@ -1,8 +1,10 @@
-PATH
-  remote: ../jekyll-fssio-theme
+GIT
+  remote: https://github.com/fullstackstories/jekyll-fssio-theme.git
+  revision: 737d8a08b0acfd0971613ba002a99ab8821b8cb8
+  tag: 0.2
   specs:
     jekyll-fssio-theme (0.1.0)
-      jekyll (~> 3.8)
+      jekyll (>= 3.7, < 4)
 
 GEM
   remote: https://rubygems.org/
