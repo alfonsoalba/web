@@ -6,8 +6,10 @@ menu_title: About
 menu_order: 2
 ---
 
-I'm Alfonso. I'm currently working really hard on becoming a better version of myself, to grow as a person and become a better a professional. 
-What do I do for a living? I'm a rails fullstack developer working in a relly cool project with a great team of people. 
+I'm Alfonso. I'm currently working really hard on becoming a better version of myself, to grow as a person and become a better a professional. This blog is another step
+forward towards that new version.
+
+What do I do for a living? I'm a Rails fullstack developer working in a really cool project with a great team of people. 
 I'm also an IT trainer/teacher. I've developed a git course that is helping a lot of teams to stop struggling with git and start using it
 like pros!!
  
