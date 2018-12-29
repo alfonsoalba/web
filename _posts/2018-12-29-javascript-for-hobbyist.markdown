@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Javascript for hobbyist"
-date:   2018-12-21 13:29:47 +0000
+date:   2018-12-29 10:50:00 +0000
 categories: javascript
 ---
 
