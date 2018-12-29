@@ -15,7 +15,7 @@ Algún tipo de infografic artículo esquema que se yo que me explique la whole p
 
 I know, it's in spanish... What he is asking is some sort of simple explanation of the "whole picture" of the javascript ecosystem for non professional developers.
 
-I was about send him an audio recording via whatsapp, but I thought that a blog post would be more useful. So let's statar from the beginning...
+I was about send him an audio recording via whatsapp, but I thought that a blog post would be more useful. So let's start from the beginning...
 
 ## In the beginning, there was Javascript
 
