@@ -15,7 +15,7 @@ Algún tipo de infografic artículo esquema que se yo que me explique la whole p
 
 I know, it's in spanish... What he is asking is some sort of simple explanation of the "whole picture" of the javascript ecosystem for non professional developers.
 
-I was about send him an audio recording via whatsapp, but I thought that a blog post would be more useful. So let's start from the beginning...
+I was about to send him an audio recording via whatsapp, but I thought that a blog post would be more useful. So let's start from the beginning...
 
 ## In the beginning, there was Javascript
 
@@ -107,7 +107,9 @@ For example, [AngulaJs](https://angularjs.org/) is a well known and very popular
 
 ![](/assets/images/javascript_libraries_and_frameworks.jpeg)
 
-If you decide to use a framework, you are choosing to do things in a particular way **since you are implicitly assuming that all the decissions made by the people who wrote the framework are good for you**. Choosing the right framework is a tough decission that should be thoroughtly researched and analyzed.
+AngularJs makes decisions about how the data binding, models, controllers, routing, directives and localization (to mention just a few) should be done. The pros of using a framework is that they provide you with all that stuff right out of the box so you can focus on writing you application.
+
+Be carefull when you decide to use a framework. Once you choose one, you are choosing to do things in a particular way **since you are implicitly assuming that all the decissions made by the people who wrote the framework are good for you**. Choosing the right framework is a tough decission that should be thoroughtly researched and analyzed.
 
 ## Runtimes
 
