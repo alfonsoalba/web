@@ -82,6 +82,7 @@ Thanks to the AJAX technique we cand send a request in the background and ask th
 ![Request with ajax](/assets/images/request_with_ajax.jpeg)
 
 > [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) is the object used in Javascript to perform asynchronous requests.
+{: .blockquote }
 
 ## Libraries
 
@@ -96,6 +97,7 @@ Normally, libraries are lightweigh and very focused on solving a particular prob
 There are also libraries which are multi-porpouse, like [JQuery](https://jquery.com/). Quoting its website...
 
 > JQuery makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.
+{: .blockquote }
 
 Another example of a library that does multiple things is [underscore](https://underscorejs.org/).
 
@@ -118,6 +120,7 @@ Runtimes are programs that read your JavaScript code and convert then to runnabl
 If you install nodejs in your computer you do not need a broser to run javascript because nodejs brings a runtime to your command line. So you can open your favorite editor, create a file hello_world.js and use nodejs to "run" it using the command line. 
 
 > Nodejs uses the V8 Javascript runtime as well!!
+{: .blockquote }
 
 ## When to choose a library or a framework
 
