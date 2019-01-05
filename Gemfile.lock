@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/fullstackstories/jekyll-fssio-theme.git
-  revision: 737d8a08b0acfd0971613ba002a99ab8821b8cb8
-  tag: 0.2
+  revision: b56abd39caf69cb72e7790c298236df3f71ac9e4
+  tag: 0.3
   specs:
-    jekyll-fssio-theme (0.1.0)
+    jekyll-fssio-theme (0.3.0)
       jekyll (>= 3.7, < 4)
 
 GEM
