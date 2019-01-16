@@ -13,7 +13,9 @@ Plesk has a very nice tool to make periodic full and incremental backups via FTP
 
 Additionally, I like keeping a bunch of older backps. Why? A few years ago we had this old wordpress site that had been hacked but nobody realised it untill three months later... so we did not have a copy of the clean site in our FTP server. These old backups are there just in case something like this happens again.
 
-The cheapest storage solution I have found is also from OVH: OVH Cloud Storage, that is powered by Open Stack. So I decided manually upload the full backup once a month to one of our storage containers.
+Looking for a cloud storage service to archive those backups, I came upon OVH Cloud Storage and decided to give a try. This OVH service has several pros: is powered by [Open Stack](https://www.openstack.org/) which is an open source project, has a reasonable price and is hosted by the same company that hosting our dedicated server which means that all the bandwith and network traffic will be kept inside the OVH infrastructure.
+
+So I decided to manually upload the full backup once a month to one of our storage containers in OVH.
 
 ## The problem
 
