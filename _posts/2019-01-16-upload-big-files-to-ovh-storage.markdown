@@ -83,9 +83,9 @@ OS_TENANT_NAME OS_TENANT_ID to be set or overridden with --os-auth-url,
 adding "-V 2" is necessary for this.
 ```
 
-...which fails because we are not authenticated. The first thing we have to do is decide which authentication version to use. At the time of writing, OVH allows version 2 so we need to retrive the auth url, username, password, tenant name, tenan id and the zone in which your OVH container is hosted.
+...which fails because we are not authenticated. The first thing we have to do is decide which authentication version to use. At the time of writing, OVH allows version 2 so we need to find all the parameters that ```swift``` needs to authenticate us: the auth url, username, password, tenant name, tenan id and the zone in which your OVH container is hosted.
 
-Where can we find all this information? Just login to your OVH account and follow this steps (I'm sorry, the screenshot is in spanish):
+Where can we find the? Just login to your OVH account and follow this steps (I'm sorry, the screenshot is in spanish):
 
 ![](/assets/images/swift_and_open_stack/find_your_openstack_auth_info_in_ovh.png)
 
