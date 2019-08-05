@@ -1,4 +1,26 @@
 ---
 label: TEmplate de prueba
 hide_body: false
-fields: []
+fields:
+- name: campo-prueba
+  type: text
+  config:
+    required: false
+  label: campo-prueba
+  description: Un campo de prueba
+- name: selector-de-prueba
+  type: select
+  default: ''
+  config:
+    required: false
+    options:
+    - Valor 1
+    - " Valor 2"
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: selector-de-prueba
+  description: Selector de prueba
+  hidden: false
