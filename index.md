@@ -6,4 +6,3 @@ layout: home
 menu_title: Home
 menu_order: 1
 ---
-Hello!!
