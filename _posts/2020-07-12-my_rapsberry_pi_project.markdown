@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Raspberry Pi project: Hardware"
-permalink: /:year/:month/:day/the-raspberry-pi-project-hardware'
+permalink: /:year/:month/:day/the-raspberry-pi-project-hardware
 date:   2020-07-12 07:00:00 +0000
 categories: "RaspberryPi"
 ---
