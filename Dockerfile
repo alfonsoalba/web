@@ -1,4 +1,4 @@
-FROM ruby:2.5.3
+FROM ruby:2.6.5
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -13,7 +13,7 @@ RUN mkdir /root/.ssh/ && echo "$SSH_KEY_PRIV" > /root/.ssh/id_rsa && echo "$SSH_
     ssh-keyscan -H bitbucket.org >> /root/.ssh/known_hosts && \
     chmod 600 /root/.ssh/id_rsa && \
     chmod 700 /root/.ssh && \
-    curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
+    curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
     apt-get update && apt-get install -yqq yarn && \
