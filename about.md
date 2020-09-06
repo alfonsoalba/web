@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 menu_title: About
-menu_order: 2
+menu_order: 3
 ---
 
 I'm Alfonso. I'm currently working really hard on becoming a better version of myself, to grow as a person and become a better a professional. This blog is another step
