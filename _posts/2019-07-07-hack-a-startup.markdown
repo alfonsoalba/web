@@ -2,7 +2,10 @@
 layout: post
 title:  "Hack a startup"
 date:   2019-07-07 10:00:00 +0000
-categories: hackathon
+categories: Hackathon
+excerpt: >-
+  A post about my experience after attending to my first <em>suppoused</em> Hackathon. Long story short: I went to a hackathon that 
+  was not a hackathon and I won!
 ---
 
 Last weekend I attended an event at the [Centro de Referencia Nacional de Desarrollo Informático y Comunicaciones](https://cftic.centrosdeformacion.empleo.madrid.org) in Getafe. Long story short: I went to a hackathon that was not a hackathon and I won!
@@ -14,13 +17,13 @@ I had not attended a hackathon before because... to be honest, I don't know! I p
 [![hack a startup 2019](/assets/images/hack-a-startup-2019/hack-a-startup-getafe-3.jpg)](https://www.facebook.com/agenciaEnfoca2/photos/pcb.2276878862573386/2276878762573396/?type=3&theater
 )
 
-The event took place on the afternoon of Friday, July 5th, and Saturday 6th. I must confess I was a little nervous and excited when I got there - felt like staying there and running away at the same time. I went on my own and knew no one there. Soon after I arrived, the organisers explained how the hackathon was going to work. It was then I realised this was not a programming event - but a business oriented one. When I found out, I considered leaving, as it was not what I expected. I found myself looking for excuses to run away... so I decided to stay. If I wanted to get out of my comfort zone this was an even better opportunity to do it.
+The event took place on the afternoon of Friday, July 5th, and Saturday 6th. I must confess I was a little nervous and excited when I got there - felt like staying there and running away at the same time. I went on my own and knew no one there. Soon after I arrived, the organizers explained how the hackathon was going to work. It was then I realized this was not a programming event - but a business-oriented one. When I found out, I considered leaving, as it was not what I expected. I found myself looking for excuses to run away... so I decided to stay. If I wanted to get out of my comfort zone this was an even better opportunity to do it.
 
 ## Not running away turned out to be a good decision
 
 They turned out to be a great couple of days: five companies presented five challenges to us. We had to work on those problems in teams of up to four people and come out with a sort of MVP that would be pitched on Saturday. The first day we had to work on the business model on our own. The second day we had several interviews with the companies in order to prepare our MVP and the presentation.
 
-At around 5pm on Friday the teams were ready and we all had chosen the challenge we wanted to work on. I opted for the one posted by [i-solagua](https://www.i-solagua.com) who had a fascinating project about the optimization of watering and fertilisation of land. Following the lean startup methodology, we conducted a first exercise to identify the stake holders of the project. Afterwards, each team had to create a Lean Canvas for our project and discuss it with the other teams. At the end of the evening we had one minute to pitch our idea on stage in front of everyone else. I had read a little bit about the lean methodology and doing that exercise was a great way to practice and ask questions. I knew about the canvas, but working on it with a real project helped me really understand the tool.
+At around 5pm on Friday the teams were ready and we all had chosen the challenge we wanted to work on. I opted for the one posted by [i-solagua](https://www.i-solagua.com) who had a fascinating project about the optimization of watering and fertilization of land. Following the lean startup methodology, we conducted a first exercise to identify the stake holders of the project. Afterward, each team had to create a Lean Canvas for our project and discuss it with the other teams. At the end of the evening we had one minute to pitch our idea on stage in front of everyone else. I had read a little bit about the lean methodology and doing that exercise was a great way to practice and ask questions. I knew about the canvas, but working on it with a real project helped me really understand the tool.
 
 
 
@@ -29,7 +32,7 @@ Saturday started with a nice breakfast and a meeting with the people from the co
 
 ![Working on the project...](/assets/images/hack-a-startup-2019/hack-a-startup-getafe-2.jpeg)
 
-Once the interview was over we had half an hour to decide and plan what we were going to present at the end of the day. I had a look at the schedule again to see how much time we had: three periods of one hour. We had two options: we either prepared a few slides, or did a mockup of the application using powerpoint / Marvel / a similar tool or create a simple web application which showed what we had in mind. Talking to my teammate, Juan Pablo, we decided to go with the second option, even though he had not much experience developing web apps. I would program a rails application and he would help me with styling and searching some stuff on the internet.
+Once the interview was over we had half an hour to decide and plan what we were going to present at the end of the day. I had a look at the schedule again to see how much time we had: three periods of one hour. We had two options: we either prepared a few slides, or did a mockup of the application using PowerPoint / Marvel / a similar tool or create a simple web application which showed what we had in mind. Talking to my teammate, Juan Pablo, we decided to go with the second option, even though he had not much experience developing web apps. I would program a rails application and he would help me with styling and searching some stuff on the internet.
 
 It was an intense afternoon, but we managed to create a working proof of concept of the control panel for the growers. You can have a look at it in [github](https://github.com/fullstackstories/hack-a-startup). During the last hour, Juan Pablo worked on the three minutes presentation while I was fixing some errors in the application. We even had time to rehearse it a few times before we all gathered together in the auditorium to present our work.
 
@@ -40,9 +43,9 @@ It was an intense afternoon, but we managed to create a working proof of concept
 
 ## What I liked most
 
-The event was organized by [enfoca-2](http://enfoca-2.com/), an internarional communication and innovation agency based in Montevideo, Miami and Madrid. [Guillermo]() was the master of ceremonies. 
+The event was organized by [enfoca-2](http://enfoca-2.com/), an international communication and innovation agency based in Montevideo, Miami and Madrid. [Guillermo]() was the master of ceremonies. 
 
-* The event schedule was followed quite well. Guillermo was constantly keeping track and informing us about how much time was left. This helped a lot to keep focus on the tasks we were doing.
+* The event schedule was followed quite well. Guillermo was constantly keeping track and informing us about how much time was left. This helped a lot to keep the focus on the tasks we were doing.
 * The schedule was split in sections, from 30 minutes to one hour. In between those sections there was a recess of a few minutes which included  a performance. It was a great way to really force us to stop, rest and set our focus on the next task.
 
 [![Performance in hack a startup](/assets/images/hack-a-startup-2019/hack-a-start-up-performance.jpg)](https://www.facebook.com/agenciaEnfoca2/photos/pcb.2276878862573386/2276878769240062/?type=3&theater)

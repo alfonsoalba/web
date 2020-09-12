@@ -19,10 +19,9 @@ description: >- # this means to ignore newlines until "baseurl:"
   My public place in the internet.
   
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://www.alfonsoalba.com" # the base hostname & protocol for your site, e.g. http://example.com
 
+show_excerpts: true
 # Build settings
 markdown: kramdown
 theme: jekyll-canvas-theme
@@ -35,7 +34,10 @@ host: 0.0.0.0
 
 permalink: /:year/:month/:day/:title:output_ext
 
-minima:
+tiles_count: 4
+
+canvas:
+  default_share_image: '/assets/images/pattern2.png'
   date_format: "%b %-d, %Y"
   social_links:
 # Exclude from processing.

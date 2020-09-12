@@ -2,36 +2,38 @@
 layout: post
 title:  "Upload big files to OVH Cloud Storage"
 date:   2019-01-16 22:30:00 +0000
-categories: "system administration"
+categories:
+  - "System Administration"
+excerpt: >-
+  Ever needed to upload a big file (~250Gigabytes) to OVH Cloud Storage? I found myself having to do it to store
+  some Plesk backup files. In this article I document how I did it.
 ---
 
-# Upload big files to OVH Cloud Storage
-
-One of my task at my current position is to be the system administrator of a shared hosting server. We have a dedicated server hosted in OVH and we are using Plesk (allways updated to the latest version ;- of course).
+One of my tasks at my current position is to be the system administrator of a shared hosting server. We have a dedicated server hosted in OVH and we are using Plesk (always updated to the latest version ;- of course).
 
 Plesk has a very nice tool to make periodic full and incremental backups via FTP. We have a backup policy which is very simple but good enough for our needs and for the domains we host. We keep about 1 month of backups in the FTP server. 
 
-Additionally, I like keeping a bunch of older backps. Why? A few years ago we had this old wordpress site that had been hacked but nobody realised it untill three months later... so we did not have a copy of the clean site in our FTP server. These old backups are there just in case something like this happens again.
+Additionally, I like keeping a bunch of older backups. Why? A few years ago we had this old WordPress site that had been hacked but nobody realized it until three months later... so we did not have a copy of the clean site in our FTP server. These old backups are there just in case something like this happens again.
 
-Looking for a cloud storage service to archive those backups, I came upon OVH Cloud Storage and decided to give a try. This OVH service has several pros: is powered by [Open Stack](https://www.openstack.org/) which is an open source project, has a reasonable price and is hosted by the same company that hosting our dedicated server which means that all the bandwith and network traffic will be kept inside the OVH infrastructure.
+Looking for a cloud storage service to archive those backups, I came upon OVH Cloud Storage and decided to give a try. This OVH service has several pros: is powered by [Open Stack](https://www.openstack.org/) which is an open-source project, has a reasonable price and is hosted by the same company that hosting our dedicated server which means that all the bandwidth and network traffic will be kept inside the OVH infrastructure.
 
 So I decided to manually upload the full backup once a month to one of our storage containers in OVH.
 
 ## The problem
 
-Uploading small files is very easy. I already have ruby scripts that uploads small files (about a few tens of megabytes). However, the full backup file is larger than 250 Gygabytes. The ruby scripts I was using were raising exceptions, complaining that the file was too big, so I had to find out about how open stack and swift handle such big files.
+Uploading small files is very easy. I already have ruby scripts that uploads small files (about a few tens of megabytes). However, the full backup file is larger than 250 Gigabytes. The ruby scripts I was using were raising exceptions, complaining that the file was too big, so I had to find out about how open stack and swift handle such big files.
 
 ## Meet the manifest...
 
-So, I want to upload a file backup.tar.bz2 to a swift contaniner called "backups". Apparently, for files bigger than a certaing threshold, the file should be split into smaller chunks that are stored in a different swift container, called "backups_segments". Then, a manifest file is created in the "backups" container with information about how to recreate the big file from the chunks stored in the "backup_segments" container.
+So, I want to upload a file backup.tar.bz2 to a swift container called "backups". Apparently, for files bigger than a certain threshold, the file should be split into smaller chunks that are stored in a different swift container, called "backups_segments". Then, a manifest file is created in the "backups" container with information about how to recreate the big file from the chunks stored in the "backup_segments" container.
 
-Fortunately, the [```swift``` command](https://docs.openstack.org/ocata/cli-reference/swift.html) takes care of splitting the file, uploding the segments and creating the manifest: you just have to pass an option with the segment size. That's easy!!
+Fortunately, the [```swift``` command](https://docs.openstack.org/ocata/cli-reference/swift.html) takes care of splitting the file, uploading the segments and creating the manifest: you just have to pass an option with the segment size. That's easy!!
 
 ## python environments
 
-The first step is to install the swift command and it's dependecies. The first time I tried to do that with pip, I run into dependency problems with some python libraries. ```swift``` needed some python libraries with higher versions than those installed by the operating system, so I could not install it with pip right away.
+The first step is to install the swift command and it's dependencies. The first time I tried to do that with pip, I run into dependency problems with some python libraries. ```swift``` needed some python libraries with higher versions than those installed by the operating system, so I could not install it with pip right away.
 
-Now, upgrading the system libraries **was not an option**. As I told you, the server is running Plesk to provide a shared hosting environment and **the last thing you want to do is make a mess with the sytem libraries**. You do not want to add more package repositories than strictly needed and you do not want Plesk to start throwing errors in your next upgrade because some library cannot be upgraded.
+Now, upgrading the system libraries **was not an option**. As I told you, the server is running Plesk to provide a shared hosting environment and **the last thing you want to do is make a mess with the system libraries**. You do not want to add more package repositories than strictly needed and you do not want Plesk to start throwing errors in your next upgrade because some library cannot be upgraded.
 
 I do not know python, but I know ruby. In ruby you can run different ruby versions in the same machine an have different sets of gems for different projects without conflicting with each other. So... is there anything out there similar to bundler or RVM in the python world? The answer is [virtualenv](https://pypi.org/project/virtualenv/): it creates and isolated environment to run your python scripts. Yeah, I know... virtualenv doesn't work like bundler and it's a different beast. But that's how I found out about it: trying to do in python something similar to what I do in ruby.
 
@@ -70,7 +72,7 @@ Once we are in our environment we can install swift
 
 ## Authentication: get a list of containers
 
-Once we have the ```swift``` command installed in our environment, we will check that everyting is fine by getting a list of all the available containers. To do that we run the ```swift list``` command:
+Once we have the ```swift``` command installed in our environment, we will check that everything is fine by getting a list of all the available containers. To do that we run the ```swift list``` command:
 
 ```bash
 (swift_env) [user@localhost ~]# swift list
@@ -85,7 +87,7 @@ adding "-V 2" is necessary for this.
 
 ...which fails because we are not authenticated. The first thing we have to do is decide which authentication version to use. At the time of writing, OVH allows version 2 so we need to find all the parameters that ```swift``` needs to authenticate us: the auth url, username, password, tenant name, tenan id and the zone in which your OVH container is hosted.
 
-Where can we find the? Just login to your OVH account and follow this steps (I'm sorry, the screenshot is in spanish):
+Where can we find the? Just login to your OVH account and follow these steps (I'm sorry, the screenshot is in Spanish):
 
 ![](/assets/images/swift_and_open_stack/find_your_openstack_auth_info_in_ovh.png)
 
@@ -113,7 +115,7 @@ backups
 
 ## Upload our big file
 
-Once we know that we can "talk" to our containers, we are ready to upload our big file! We use ```swift upload``` command and pass the segment size so swift will split the file in chunks automatically for us (and create the maifest)
+Once we know that we can "talk" to our containers, we are ready to upload our big file! We use ```swift upload``` command and pass the segment size so swift will split the file in chunks automatically for us (and create the manifest)
 
 ```bash
 swift upload -V2 -S 5000000000 --use-slo --object-name backup.tar backups backup.tar

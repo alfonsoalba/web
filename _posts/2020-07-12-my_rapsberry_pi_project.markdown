@@ -1,12 +1,14 @@
 ---
 layout: post
 title:  "The Raspberry Pi project: Hardware"
-permalink: /:year/:month/:day/the-raspberry-pi-project-hardware
+permalink: /:year/:month/:day/the-raspberry-pi-project-hardware.html
 date:   2020-07-12 07:00:00 +0000
-categories: "RaspberryPi"
+categories: 
+  - "RaspberryPi"
+excerpt: >-
+  After a few years I finally decided to buy a Raspberry Pi and <em>do something</em> with it. In this post I talk about
+  the hardware that I bought and what I'm building with it as the first step of my project.
 ---
-
-# The Raspberry Pi project
 
 In 2013 I went to the [iOSDevUK conference](https://www.iosdevuk.com/) that 
 takes place every year in Aberystwyth (Wales). 

@@ -11,10 +11,11 @@ services:
       - TZ=Europe/Madrid
       - BUNDLE_DATA=/gems
     volumes:
-      - .:/usr/src/app
-      - ../jekyll-fssio-theme:/usr/src/jekyll-fssio-theme
-      - ../jekyll-canvas-theme:/usr/src/jekyll-canvas-theme
+      - .:/usr/src/app:delegated
+      - ../jekyll-fssio-theme:/usr/src/jekyll-fssio-theme:delegated
+      - ../jekyll-canvas-theme:/usr/src/jekyll-canvas-theme:delegated
       - ./docker-data/irb-history:/root/.irb-history
+      - ./docker-data/.bash_history:/home/jekyll/.bash_history
       - gems_cache:/gems:delegated
       - node_modules_cache:/usr/src/node_modules
     ports:
