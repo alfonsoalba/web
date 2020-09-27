@@ -30,7 +30,21 @@ list_title: Recent from the blog
 					<div class="col-lg-6">
 						<div class="entry-image">
 							<a href="{{ post.url | relative_url }}">
-								<img src="{{ post.share_image | default: site.canvas.default_share_image }}" alt="{{ post.share_image_alt | default: post.title }}">
+								{% if post.cover_image %}
+								
+								{% assign cover_image_path = "assets/images/" | append: post.cover_image %}
+								{% responsive_image_block %}
+									path: {{ cover_image_path }}
+									alt: {{ post.cover_image_alt | default: post.title }}
+									template: "_includes/srcset_grid_image_template.html"
+
+								{% endresponsive_image_block %}    
+
+								{% else %}
+
+								<img src="{{ post.share_image | default: site.canvas.default_share_image }}" alt="{{ post.cover_image_alt | default: post.title }}">
+
+								{% endif %}
 							</a>
 						</div>
 					</div>

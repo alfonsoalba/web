@@ -1,0 +1,22 @@
+{% comment %}
+Template to display an image inside a grid view.
+
+Usage:
+
+	{% responsive_image path: assets/image.jpg alt: "A description of the image" template: "_includes/srcset_grid_image_template.html" %}
+
+{% endcomment %}
+
+{% assign aux = resized | where: "width", 1024 %}
+{% assign image_1024 = aux[0] %}
+{% assign aux = resized | where: "width", 800 %}
+{% assign image_800 = aux[0] %}
+{% assign aux = resized | where: "width", 600 %}
+{% assign image_600 = aux[0] %}
+{% capture srcset %}
+    /{{ image_1024.path }} {{ image_1024.width }}w,
+    /{{ image_800.path }} {{ image_800.width }}w,
+    /{{ image_600.path }} {{ image_600.width }}w
+{% endcapture %}
+
+<img src="/{{ image_1024.path }}" alt="{{ alt }}" srcset="{{ srcset | strip_newlines }}">
