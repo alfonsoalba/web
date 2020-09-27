@@ -8,7 +8,7 @@ excerpt: >-
   Ever needed to upload a big file (~250Gigabytes) to OVH Cloud Storage? I found myself having to do it to store
   some Plesk backup files. In this article I document how I did it.
 cover_image: "post_headers/file_upload_to_cloud.jpeg"
-
+image: "/assets/images/cards/file_upload_to_cloud.jpg"
 ---
 
 One of my tasks at my current position is to be the system administrator of a shared hosting server. We have a dedicated server hosted in OVH and we are using Plesk (always updated to the latest version ;- of course).
