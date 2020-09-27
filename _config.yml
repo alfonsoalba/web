@@ -52,7 +52,6 @@ canvas:
   default_share_image: '/assets/images/pattern2.png'
   date_format: "%b %-d, %Y"
   social_links:
-  template_for_og_image_tag: _includes/og_for_cover_image.html
 
 twitter:
   username: aalbagarcia
