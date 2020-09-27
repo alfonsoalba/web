@@ -27,6 +27,7 @@ markdown: kramdown
 theme: jekyll-canvas-theme
 plugins:
   - jekyll-feed
+  - jekyll-responsive-image
   - jekyll-seo-tag
 
 
@@ -36,7 +37,17 @@ permalink: /:year/:month/:day/:title:output_ext
 
 tiles_count: 4
 
+responsive_image:
+  template: _includes/srcset_resize_fallback_template.html
+  sizes:
+    - width: 480
+    - width: 600
+    - width: 800
+    - width: 1200
+    - width: 1440
+
 canvas:
+  body_class: stretched
   default_share_image: '/assets/images/pattern2.png'
   date_format: "%b %-d, %Y"
   social_links:
