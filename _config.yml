@@ -71,3 +71,4 @@ exclude:
   - vendor/ruby/
   - Dockerfile
   - docker-compose.yml
+  - jekyll-website.code-workspace
