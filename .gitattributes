@@ -1,2 +1,5 @@
 assets/images/post_headers/* filter=lfs diff=lfs merge=lfs -text
 assets/resized/* filter=lfs diff=lfs merge=lfs -text
+assets/images/cards/containers.jpg filter=lfs diff=lfs merge=lfs -text
+assets/images/cards/file_upload_to_cloud.jpg filter=lfs diff=lfs merge=lfs -text
+assets/images/cards/touch_play_button.jpg filter=lfs diff=lfs merge=lfs -text
