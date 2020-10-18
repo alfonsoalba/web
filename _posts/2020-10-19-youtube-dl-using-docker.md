@@ -207,6 +207,7 @@ will end up belonging to us:
 ```bash
 youtube-dl-docker > docker run --rm -v $(pwd):/downloads youtube-dl "https://www.youtube.com/watch?v=Q_F9CxSmGOM"
 youtube-dl-docker > ls -l
+-rw-r--r-- 1 youruser youruser 3097969115 Jan  7  2020 the_video.mp4
 ```
 
 ## Improvements
