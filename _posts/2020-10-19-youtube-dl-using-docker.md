@@ -15,8 +15,8 @@ image: "/assets/images/cards/touch_play_button.jpg"
 ## TL;DR
 
 You don't really need docker to run `youtube-dl`. You can just install it using `brew install youtube-dl` or 
-`apt install youtube-dl` in debian based distributions and you are ready to go. However, as I mentioned in a 
-[previous post]({% link _posts/2020-10-13-abput-this-blog-docker.md %}), I will use docker to run the command.
+`apt install youtube-dl` in Debian based distributions and you are ready to go. However, as I mentioned in a 
+[previous post]({% link _posts/2020-10-13-about-this-blog-docker.md %}), I will use docker to run the command.
 
 ## Docker concepts involved
 
@@ -32,10 +32,10 @@ you will need to dig deeper into the following docker concepts:
 
 Explaining these docker concepts is out of the scope of this post, so I will not go into the details on any of them.
 
-## Creating a dockerfile for Docker for Mac: how we want to build our image
+## Creating a Dockerfile for Docker for Mac: how we want to build our image
 
 As mentioned in the [INSTALLATION section of the readme of the `youtube-dl` respository](https://github.com/ytdl-org/youtube-dl),
-installing the script is as simple as download it with `wget` or `curl`, set the exectuable permission and run it. 
+installing the script is as simple as download it with `wget` or `curl`, set the execute permission and run it. 
 All you need is a python interpreter and `ffmpeg` for certain options.
 
 We will create a docker image and later use that image to run the command inside a container.
@@ -75,7 +75,7 @@ RUN  apk add --no-cache ffmpeg curl && \
      chmod a+rx /usr/local/bin/youtube-dl
 ```
 
-The next step is to install the depencies that we will need to run the script:
+The next step is to install the dependencies that we will need to run the script:
 * `curl` to actually download the script
 * `ffmpeg` if we want to use certain options of `youtube-dl`
 
@@ -112,7 +112,7 @@ youtube-dl-docker > docker image build -t youtube-dl .
 The first command will tell docker to build the image using 
 [`buildkit`](https://docs.docker.com/develop/develop-images/build_enhancements/).
 
-The second command will actually build the image. If everything went well, you should see a message like this after 
+The second command is the one that will build the image. If everything went well, you should see a message like this after 
 the command `docker image build` finishes:
 
 ```bash
@@ -162,14 +162,14 @@ downloaded files belonging to the root user:
 
 ```bash
 youtube-dl-docker > ls -l
-XXXXX
+-rw-r--r-- 1 root root 3097969115 Jan  7  2020 the_video.mp4
 ```
 
-This is due to how the filesystem is handled in Docker for Mac vs how it is handeled in Linux.
+This is due to how the filesystem is handled in Docker for Mac vs how it is handled in Linux.
 
 ## Fixing the file permissions in Linux
 
-To fix this issue, we are going to change the `Dockerfile` a litte bit. We will pass the user id at build time 
+To fix this issue, we are going to change the `Dockerfile` a little bit. We will pass the user id at build time 
 as a build argument and create a user inside the container with the same user id as our system user. Then, we will run
 the process inside the container as that user instead of root.
 
