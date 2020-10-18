@@ -247,10 +247,14 @@ We can also create an alias to avoid writing this very long command every time w
 > alias youtube-dl="docker run --rm -v /Users/aalba/MyStuff/youtube-dl:/downloads youtube-dl"
 ```
 
-Once you defined this alias, running the command `youtube-dl "https://www.youtube.com/watch?v=Q_F9CxSmGOM"` will
+Once you define this alias, running the command `youtube-dl "https://www.youtube.com/watch?v=Q_F9CxSmGOM"` will
 download the file to the current folder.
 
 ## Limitations
 
 Since we are running the command inside a container, those options from the `youtube-dl` command that
-read or write files to the host file system, might require de definition of extra bind volumes to work properly.
+read or write files to the host file system, might require the definition of extra bind volumes to work properly.
+
+## References
+
+The code of the post can be found in [this git repository](https://github.com/alfonsoalba/youtube-dl-docker).
