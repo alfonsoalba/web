@@ -4,6 +4,7 @@ title:  "About this blog: Docker"
 date:   2020-10-13 09:00:00 +0000
 categories:
   - "Docker"
+  - "About this blog"
 excerpt: >-
   What will you find in the blog related to docker? I've made a decision about
   how I'm going to use docker and I share with you in this post. 
