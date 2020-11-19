@@ -8,7 +8,7 @@ excerpt: >-
   In March this year, we had the first big lockdown due to COVID-19. I used that
   extra time at home to rethink the way I use my computer to work. I decided to change it.
 
-cover_image_alt: "osx_windows_linux"  
+cover_image_alt: "macos_windows_linux"  
 cover_image: "post_headers/os_windows_linux.jpg"
 image: "/assets/images/cards/os_windows_linux.jpg"  
 
