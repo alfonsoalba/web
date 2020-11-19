@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "About this blog: Working with multiple operating systems"
-date:   2020-11-03 09:00:00 +0000
+date:   2020-11-19 22:00:00 +0000
 categories:
   - "About this blog"
 excerpt: >-
