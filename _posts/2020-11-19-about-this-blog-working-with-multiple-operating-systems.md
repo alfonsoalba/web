@@ -9,8 +9,8 @@ excerpt: >-
   extra time at home to rethink the way I use my computer to work. I decided to change it.
 
 cover_image_alt: "macos_windows_linux"  
-cover_image: "post_headers/os_windows_linux.jpg"
-image: "/assets/images/cards/os_windows_linux.jpg"  
+cover_image: "post_headers/windows_linux_macos.jpeg"
+image: "/assets/images/cards/windows_linux_macos.jpg"
 
 ---
 
