@@ -87,7 +87,6 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.1)
   jekyll-canvas-theme!
-  jekyll-responsive-image (~> 1.5.5)
   minima (~> 2.0)
   tzinfo-data
 
