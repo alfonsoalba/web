@@ -53,7 +53,7 @@ was great. I started to follow how WSL was evolving and I got excited with
 
 By the end of last year, I started to look for computers since I needed to replace mine. What I read 
 about Windows 10 had so much impact on me that I even looked at the prices and specs of Surface 2 and Dell computers. 
-I was seriously thinking about replacing my old MacBook Pro with a Windows box. 
+I was seriously thinking about replacing my 5 years old MacBook Pro with a Windows box. 
 Unfortunately for Microsoft and Dell, Apple released
 the new 16-inch MacBook Pro in the last quarter I finally decided to buy it instead.
 
@@ -61,15 +61,16 @@ Even though I bought a MacBook Pro again, I committed myself to be able to do my
 major operating systems: macOS, Windows 10, and Linux. Why?
 
 * If I start a new job or a new project in which you are requested to use
-  a different operating system to the one you I'm used to, I would be productive in a shorter
+  a different operating system to the one I'm used to, I would be productive in a shorter
   time. I would already know the tools and I would have been working on them for some time so
   I would be ready to Rock 'n' Roll from day one.
-* I'll get out of my comfort zone.
+* It will get me out of my comfort zone. After working with mac OS for more than 9 years, 
+  I'll have to force myself to find other ways to stay productive.
 * When I give courses, more than 95% of the people attending use Windows, and when they have
   problems with their computers I'm not able to help. I want to change that.
-* Get a deeper knowledge of Windows and learn something new.
-* I think it's kinda cool 😎
+* Learn other ways of doing things.
+* I'll feel I'm kinda cool 😎
 
-I'm planning on writing a few posts about this and share my experience.
+I plan to write a few posts about this topic. I want to share my experience about how I install and use Windows and Linux in a MacBook Pro 16'' from 2019.
 
 See you in the next post!
