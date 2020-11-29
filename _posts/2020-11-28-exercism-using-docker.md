@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Running exercism inside a docker container"
-date:   2020-11-28 21:30:00 +0000
+date:   2020-11-28 21:00:00 +2000
 categories:
   - "Docker"
   - "Learning"
