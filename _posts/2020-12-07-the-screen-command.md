@@ -6,7 +6,8 @@ categories:
   - "Linux"
   - "Commands"
 excerpt: >-
-  The screen command 
+  The screen command has many use cases. In this post I show you how I use it to run long-running scripts in the background so 
+  I can disconnect from the server while the script runs. A very useful command to have in your toolset!
 cover_image_alt: "multiple screens"  
 cover_image: "post_headers/multiple_screens.jpg"
 image: "/assets/images/cards/multiple_screens.jpg"   
