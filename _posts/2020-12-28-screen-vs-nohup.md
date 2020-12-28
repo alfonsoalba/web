@@ -72,7 +72,7 @@ involves a script that asks you different questions during the upgrade process. 
 Using screen we can start the Jira upgrade process, answer whatever questions the upgrade script asks and let it work for
 some time in the background while it performs the backups and other stuff. We can even close the ssh connection to the 
 server. Later, we can ssh back to the server, reattach to the screen and continue with the last part of the installation.
-I can't do that with `nohup`
+I can't do that with `nohup`.
 
 ## Terminal window manager
 
@@ -97,7 +97,7 @@ It's more a terminal manager while `nohup` is a tool to run processes in the bac
 ## Conclusion
 
 Answering the question in the title of this post: there is no tool better than the other one. 
-`nohup` and `screen` are different things and therefore difficult to compare. Being a terminal manager, `screen` is more powerfull
-and it's a great add on to your toolset if you work regularly with the command line. However, the avalilability of `nohup`
+`nohup` and `screen` are different things and therefore difficult to compare. Being a terminal manager, `screen` is more powerful
+and it's a great add-on to your toolset if you work regularly with the command line. However, the availability of `nohup`
 makes it almost a universal tool, so it's good to know what you can and can't do with it just in case you stumble upon
 a system in which no terminal manager like `screen` can be installed.
