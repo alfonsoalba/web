@@ -1,0 +1,103 @@
+---
+layout: post
+title:  "Objectives for 2021"
+date:   2021-01-01 09:00:00 +2000
+categories:
+  - "Other"
+excerpt: >-
+  My personal and professional objectives for 2021. Even though I set goals every Christmas,
+  I usually forget about them around February. I'm sure that writing them down and sharing them here
+  will help me to revisit them often and keep my focus on what I want to achieve.
+
+cover_image_alt: "objectives for 2021"  
+cover_image: "post_headers/objectives_for_2021.jpg"
+image: "/assets/images/cards/objectives_for_2021.jpg"   
+---
+
+## TL;DR
+
+...There is no TL;DR for this post. You will have to read it this time if you are interested 🙃
+
+
+## 2021
+
+This will be the first time that I write about my objectives for a new year. David Bonilla has 
+inspired me to do it after reading his posts with new objectives for the last years. Even though I set goals every Christmas,
+I usually forget about them around February. I'm sure that writing them down and sharing them here
+will help me to revisit them often and keep my focus on what I want to achieve.
+
+## Personal objectives
+
+**Diet** (_high priority_). In 2018 I was diagnosed with an intolerance to sorbitol. I was given a diet that excluded 
+any kind of fruit. Also, I could only eat like 7 kinds of vegetables. It is a very restrictive diet. The doctor who prescribed me 
+the diet is an excellent professional and I really trust him. He did a good job diagnosing the intolerance but 
+I'm not sure that following such a restrictive diet for the rest of my life it's a good idea. One of my objectives for 
+2021 is to go to a nutritionist and tailor an appropriate diet for me.
+
+[**Estoicism** a is a school of Hellenistic philosophy founded by Zeno of Citium in Athens in the early 3rd century BC](https://en.wikipedia.org/wiki/Stoicism). 
+One of its principles is to focus and act on what depends on you and accept what doesn't. It has helped a lot during this 
+year to bear the COVID-19 pandemic. I will not go deeper into all the principles of Estocism in this post, but
+in 2021 I want to delve into this way of thinking and apply it to different aspects of my personal and professional 
+life.
+
+**Typing** (_high priority_). I think that typing fast and with precision can improve your productivity. Once you develop 
+the muscle memory that allows you to type without thinking about it, you can focus more on what you type (i.e. code)
+and less in what is the next letter you have to press on your keyboard. Some of the things I want to achieve:
+* Finish [this](https://www.typing.com/) and [this](https://www.typingclub.com/) online typing courses
+* Improve my average typing speed, which is about 25 words per minute at the moment
+* Improve my precision, which is about 80% for letters and about 50% for numbers if I don't look at the keyboard
+
+**Trekking** (_medium priority_):
+* Go at least twice a month to walk in the mountains near Madrid
+* Go outside Madrid on a trip to walk some trails at least twice this year (if COVID restrictions allow it)
+
+**Raspberry** (_medium priority_) After [buying a Raspberry Pi 4](https://www.alfonsoalba.com/2020/07/12/the-raspberry-pi-project-hardware.html)
+in 2020, 2021 will be the year in which I will put it to work for me:
+* Add a VPN to be able to access my Home network from the outside
+* Create a self-hosted CD/CI with Jenkins
+* Play the Gong when some events happen, like when we get a new user in our SaaS software for example.
+
+**Surgery** (_high priority_). I tore the Supraspinatus tendon of my right shoulder about one year and a half ago. It's 
+not a critical wound at the moment meaning that I can still work and carry on with my life and do some exercise. However, 
+this year I want to get the surgery to heal it. It can get worse as I age and there some activities that I enjoy doing 
+like Body Attack or paddle that I can't do at the moment. I hope I can resume them after the surgery.
+
+[**Sketchnoting**](https://en.wikipedia.org/wiki/Sketchnoting) (_medium priority_). [Javier Alonso](https://twitter.com/oyabun)
+from [dibujandocharlas.com](https://dibujandocharlas.com/) presented a webminar this year about Sketchnoting. It was 
+quite inspiring and I started to experiment with it. For this year I want to:
+* Give talks and use Sketchnoting techniques to make the slides
+* Use it also for the slides that I use in my courses
+
+
+## Profesional objectives
+
+**Blog & Newsletter** (_high priority_)
+* Continue to post in this blog, at least twice a month
+* Start the newsletter "A DevOps Diary" in which I share things related to my day to day job. Problems, solutions,
+  events, articles, talks, or StackOverflow questions that I find interesting or useful for my day to day work.
+* After 6 years, start writing in the blog for [cursodegit.com](https://www.cursodegit.com) again.
+
+**Training** (_medium priority_)
+* Improve the course materials for [cursodegit.com](https://www.cursodegit.com)
+* Give the advance git course to a company outside Spain
+* Improve and work on the other courses: Docker, Jenkins, and Kubernetes
+* Spin up my self-hosted academy and start giving the courses in it
+
+**Meetup** (_high priority_) Start the meetups of the 
+[Spanish Git Meetup](https://www.meetup.com/Spanish-Git-Meetup/) again, at least once per month.
+
+**Video Channels** (_medium priority_) Create YouTube channels to complement the blog posts with videos. I have no 
+equipment or experience recording videos so let's see what comes out.
+
+**Learning** (_high priority_) Last but not least, I want to dig deeper into the following technologies:
+* Docker, Podman, and Kubernetes
+* Bash
+* Python
+* Groovy / Java and Jenkins
+
+## Let's see...
+
+As I mentioned at the beginning of the post, this is the first year that I publicly post my objectives. I think they are
+quite ambitious, I have high hopes for 2021. Let's see how it goes. I can't wait for the recap next year!
+
+
