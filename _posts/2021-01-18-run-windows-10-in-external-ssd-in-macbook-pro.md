@@ -8,9 +8,9 @@ excerpt: >-
    As I wrote in a previous post, one of the things that I want to able to do is working efficiently in the three most 
    common operating systems: macOS, Windows 10 and Linux. In this post I share with you the procedure that I followed
    to install and run Windows 10 from an external SSD USB Drive
-cover_image_alt: "objectives for 2021"  
-cover_image: "post_headers/objectives_for_2021.jpg"
-image: "/assets/images/cards/objectives_for_2021.jpg"   
+cover_image_alt: "Computer with macOS and Windows 10"  
+cover_image: "post_headers/computer_with_macos_and_windows10.jpg"
+image: "/assets/images/cards/computer_with_macos_and_windows10_card.jpeg"   
 ---
 
 ## TL;DR;
@@ -224,20 +224,60 @@ If you miss that and the virtual machine restarts, you will have to do it again.
 
 ## Configuration to boot from the external drive
 
-This depends on your OSX version and hardware. If your mac doesn't have a T2 Chip, you can just keep pressed the ALT key 
-while the computer restarts. After a few seconds, it will ask you which device you want to use. Select the `EFI Boot`
+After canceling the installer and preventing it to restart, we need to restart our machine to boot from the 
+external drive. The steps to follow depend on our hardware. 
+
+### Macs without the T2 Chip
+
+If your mac doesn't have a T2 Chip, we can just keep pressed the ALT key 
+while the computer restarts. After a few seconds, it will ask us which device we want to use. We select the `EFI Boot`
 device and Windows will continue with the installation and configuration.
 
-We have a MacBook Pro 16' 2019 and in that case, we need to modify the startup process a little bit to be able to boot from
-an external drive.
+### Macs with the T2Chip
 
-I had to decrese the security level. I set a password so only if you know the
-password you can boot. That will be all the security we will get.
+As I told you before, this is the moment in which you need to loosen the security restrictions a little bit. In our case,
+we have a MacBook Pro 16' 2019 and we were fine with it.
+
+Restart and press CMD+R to start the macOS Recovery application. You might be requested to log in using a user from
+the local computer. Select a user with administration permissions and continue:
+
+{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/start_recovery_application.jpg %}
+
+After logging in, we go to `Utilities -> Startup Security Utility`. We will be prompted to enter an administrator password
+to proceed. This is the configuration that we are using to boot from the external drive:
+
+* Turn on firmware password protection, so when somebody tries to boot from an external drive it will be prompted to enter
+  a password. This is the only security that we will have to avoid booting from other drives.
+* In the section `Secure Boot` we selected the option "No security", since Windows 10 is not an operating system trusted by apple.
+* In the section `Allowed Boot Media` we selected the option to allow booting from removable media.
+
+{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/startup_security_options.jpg %}
+
+After setting this configuration, we close the macOS Recovery application and restart the computer while pressing the ALT key. 
+Since we activated the Firmware protection password, we get a prompt to enter it:
+
+{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/boot_locked.jpg %}
+
+
+**⚠️ Be aware that when you enter the password in this screen, the keyboard will be configured to be en english, so if the firmware 
+password that you entered has especial characters like puntuation symbols or accents, you will have to type them
+as if you had a keyboard with an english layout ⚠️**. Our mac has a Spanish keyboard and the firmware password contains some
+puntuation symbols; it took us a few long minutes to realize this before we could unlock the screen again.
+
+After unlocking the screen, we will be able to select the `EFI Boot` device and the installation of windows will
+continue.
+
+{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/select_efi_boot.jpg %}
+
 
 ## Boot from the drive and finish the installation
 
-Before booting, we insert the external keyboard and the mouse because we didn't include the drivers in the ISO image (see above).
-This will be solved later when we install bootcamp in windows. After the computer restarts and you select to boot from the
+Before booting from the Windows drive, we insert the external keyboard and the mouse because we didn't include the 
+drivers in the ISO image (see above). The drivers for the keyboard, the mouse and the rest of the hardware will be 
+installed later when we install bootcamp in windows, so we can use the external USB devices while we finish the 
+installation. 
+
+After the computer restarts and you select to boot from the
 external drive (see above), Windows will resume the installation and configuration. Just follow the steps of the wizard. 
 During this process, windows will restart a couple of times so we had to keep an eye on the laptop to press the ALT key every
 time the computer rebooted.
@@ -248,7 +288,7 @@ Once the installation of Windows is done, boot your computer from the external d
 Open a Windows Explorer window and navigate to `WindowsSupport -> BootCamp` inside the new USB device. Run the 
 `Setup.exe` program. After it's done (it took about 5 minutes to install all everything), we will have to reboot the computer.
 
-After restarting, We checked the following:
+After restarting, we check the following:
 * keyboard: display brightness, sound, backlights... everything should work
 * trackpad: well, our mouse moved as expected
 * we were able to connect to our Wifi network
