@@ -6,7 +6,7 @@ categories:
   - "Windows 10"
 excerpt: >-
    As I wrote in a previous post, one of the things that I want to able to do is working efficiently in the three most 
-   common operating systems: macOS, Windows 10 and Linux. In this post I share with you the procedure that I followed
+   common operating systems: macOS, Windows 10, and Linux. In this post, I share with you the procedure that I followed
    to install and run Windows 10 from an external SSD USB Drive
 cover_image_alt: "Computer with macOS and Windows 10"  
 cover_image: "post_headers/computer_with_macos_and_windows10.jpg"
@@ -23,11 +23,15 @@ able to run Windows 10 from an external SSD drive. 😎
 The links in the article are Amazon affiliate links that will help me monetize the site and pay some of the costs of 
 keeping it alive. At the end of the post, there is a section with links that don't have the affiliate code in them.
 
-## Before you start
+## Before we start
+
+As I wrote in a [previous post]( {% post_url 2021-01-18-run-windows-10-in-external-ssd-in-macbook-pro %}), one of the 
+things that I want to able to do is working efficiently in the three most 
+common operating systems: macOS, Windows 10, and Linux. In this post, I share with you the procedure that I followed
+to install and run Windows 10 from an external SSD USB Drive
+
 
 This is all the hardware and software that I used:
-
-https://medium.com/@transferx23/install-windows-10-on-an-external-hdd-or-ssd-with-boot-camp-under-macos-catalina-10-15-e0e315f2d48d
 
 * A Windows 10 Pro License Key
 * An external USB to download and save the Bootcamp Windows 10 support files. I'm using a 
@@ -312,3 +316,10 @@ The following links don't include my Amazon affiliate ID so I won't receive any 
 * [Kingston Datatraveler 64G](https://www.amazon.es/Kingston-DTIG4-64GB-Memoria-USB/dp/B00G9WHMYK)
 * [Perixx Periboard-407 Mini-Keyboard](https://www.amazon.es/Perixx-PERIBOARD-409-Teclado-Ingl%C3%A9s-Espa%C3%B1ol/dp/B017DNQ410?th=1)
 * [Logitech B100](https://www.amazon.es/Logitech-B100-Rat%C3%B3n-%C3%B3ptico-blanco/dp/B00C1CVMSY)
+
+Other posts that I found interesting while working on this:
+
+* [https://medium.com/@transferx23/install-windows-10-on-an-external-hdd-or-ssd-with-boot-camp-under-macos-catalina-10-15-e0e315f2d48d
+](https://medium.com/@transferx23/install-windows-10-on-an-external-hdd-or-ssd-with-boot-camp-under-macos-catalina-10-15-e0e315f2d48d
+)
+* [https://www.youtube.com/watch?v=sfcNR2l7ios](https://www.youtube.com/watch?v=sfcNR2l7ios)
