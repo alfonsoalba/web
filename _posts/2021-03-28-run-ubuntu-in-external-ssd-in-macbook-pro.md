@@ -109,7 +109,7 @@ To "burn" it, we will use the terminal and a bunch of commands.
 
 Run the following command:
 
-```
+```bash
 > diskutil list
 /dev/disk0 (internal, physical):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
@@ -146,7 +146,7 @@ Unmount of all volumes on disk2 was successful.
 Before "burning" the image, we need to convert the file that we downloaded from the ISO to the IMG format. 
 We will use the `hdiutil` command to do that:
 
-```
+```bash
 > hdiutil convert -format UDRW -o ~/Downloads/ubuntu.dmg ~/Downloads/ubuntu.iso
 ```
 
@@ -154,7 +154,7 @@ We will use the `hdiutil` command to do that:
 
 Once we have the image in the IMG format, we can "burn" it to the USB Stick using the `dd` command:
 
-```
+```bash
 > sudo dd if=~/Downloads/ubuntu.dmg of=/dev/rdisk2 bs=1m
 ```
 
@@ -192,13 +192,13 @@ able to run the playbook, we need to install several packages before.
 
 Install python packages `pip3` and `distutils-extra` for python3
 
-```
+```bash
 > sudo apt install python3-pip python3-distutils-extra  
 ```
 
 Since our playbook uses `curl`, we also need to install it:
 
-```
+```bash
 > sudo apt-get install curl
 ```
 
@@ -213,7 +213,7 @@ We need to install the module `python-apt` from somewhere else... Let's do it!
 * Install the package `libapt-pkg-dev`: this package installs the file `apt-pkg/hashes.h` (and other files, but this is
 the one we are interested in), that pip3 will need later when we install the `python-apt` module:
 
-```
+```bash
 > sudo apt-get install libapt-pkg-dev
 ```
 
@@ -223,7 +223,7 @@ the one we are interested in), that pip3 will need later when we install the `py
   https://salsa.debian.org/apt-team/python-apt/-/archive/2.1.7/python-apt-2.1.7.tar.gz 
 * Install the module using pip3:
 
-```
+```bash
 > pip3 install https://salsa.debian.org/apt-team/python-apt/-/archive/2.1.7/python-apt-2.1.7.tar.gz 
 ```
 
@@ -234,32 +234,32 @@ available in our computer. The playbook that we want to run uses ansible 2.10, s
 
 * Install the module `virtualenv`
 
-```
+```bash
 > pip3 install virtualenv
 ```
 
 * Add `~/.local/bin` to your path
 
-```
+```bash
 > export PATH=$PATH:~/.local/bin
 ```
 
 * Add this last step to your `.bashrc` file so it will be there the next time you open a terminal
 * Create a virtual environment called `ansible2.10`
 
-```
+```bash
 > virtualenv ansible2.10 
 ```
 
 * Activate the environment:
 
-```
+```bash
 >. ansible2.10/bin/activate
 (ansible2.10) > 
 ```
 
 * Install Ansible
-```
+```bash
 (ansible2.10) > pip3 install ansible
 
 ```
@@ -269,7 +269,7 @@ We are ready now to run the playbook!!!
 
 Get the playbook from [this repository](https://github.com/alfonsoalba/linux-in-macbook-pro-13-from-2015). Once downloaded, 
 make sure you run the playbook using a user that can run admin commands using `sudo`. Get some popcorn and run it:
-
+bash
 ```
 (ansible2.10) > ansible-playbook -K playbook.yml 
 BECOME password:
