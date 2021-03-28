@@ -8,7 +8,7 @@ excerpt: >-
    I'm committed to working efficiently in the three most 
    common operating systems: macOS, Windows 10, and Linux. In this post, I share with you the procedure that I followed
    to install and run Ubuntu 20.04 from an external SSD USB Drive connected to a MacBook Pro... and why I decided to 
-   step back after I had everything ready to start working ;-(
+   step back after I had everything ready to start working.
 cover_image_alt: "Computer with macOS and Linux"  
 cover_image: "post_headers/computer_with_macos_and_ubuntu.jpg"
 image: "/assets/images/cards/computer_with_macos_and_ubuntu_card.jpeg"   
