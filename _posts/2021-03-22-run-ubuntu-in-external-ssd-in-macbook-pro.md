@@ -10,8 +10,8 @@ excerpt: >-
    to install and run Ubuntu 20.04 from an external SSD USB Drive connected to a MacBook Pro... and why I decided to 
    step back after I had everything ready to start working ;-(
 cover_image_alt: "Computer with macOS and Linux"  
-cover_image: "post_headers/computer_with_macos_and_windows10.jpg"
-image: "/assets/images/cards/computer_with_macos_and_windows10_card.jpeg"   
+cover_image: "post_headers/computer_with_macos_and_ubuntu.jpg"
+image: "/assets/images/cards/computer_with_macos_and_ubuntu_card.jpeg"   
 ---
 
 ## TL;DR;
