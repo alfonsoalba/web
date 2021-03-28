@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Run Ubuntu 20.04 in an external SSD drive in a MacBook Pro"
-date:   2021-03-21 07:00:00 +2000
+date:   2021-03-28 18:30:00 +2000
 categories:
   - "Linux"
 excerpt: >-
