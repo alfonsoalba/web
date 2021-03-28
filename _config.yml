@@ -25,7 +25,7 @@ show_excerpts: true
 # Build settings
 markdown: kramdown
 kramdown:
-  parse_block_html: true
+  parse_block_html: false
 theme: jekyll-canvas-theme
 plugins:
   - jekyll-feed
