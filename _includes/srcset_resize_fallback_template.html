@@ -15,4 +15,10 @@ Usage:
 {% endfor %}
 {% endcapture %}
 
+{% if link_to %}
+<a href="{{ link_to }}" target="{{ target }}">
+    <img src="/{{ largest.path }}" alt="{{ alt }}" srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w">
+</a>
+{% else %}
 <img src="/{{ largest.path }}" alt="{{ alt }}" srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w">
+{% endif %}
