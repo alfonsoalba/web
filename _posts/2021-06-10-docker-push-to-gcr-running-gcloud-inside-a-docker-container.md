@@ -353,4 +353,4 @@ That's it. We had to run a lot of long commands to get here, but we did it!
   which will substantially reduce the length of the commands we need to type. We could define an alias instead of a 
   shell script.
 
-  And this is all for today. I hope you find it usefull.
+And this is all for today. I hope you find it usefull.
