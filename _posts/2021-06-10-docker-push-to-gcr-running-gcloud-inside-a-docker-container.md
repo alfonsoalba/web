@@ -10,7 +10,7 @@ excerpt: >-
   in order to push docker images to it. Also, instead of installing the Google Cloud SDK
   in our computer, we will run the gcloud commands from inside a docker container.
 cover_image_alt: "gcloud inside a docker container"  
-cover_image: "post_headers/S01E04_git_worktrees.jpeg"
+cover_image: "post_headers/containers_and_man_with_walkie_talkie.jpeg"
 image: "/assets/images/cards/git_worktrees_meetup_card.jpeg"   
 ---
 
@@ -55,7 +55,7 @@ The [recommended way of running the gcloud command](https://cloud.google.com/sdk
 is to install the SDK locally. However, being committed to use docker as much as
 possible, we will run the `gcloud` command from inside a docker container.
 Fortunately, Google provides a public docker image with different versions of the SDK, 
-so we will just follow the documentation here: https://cloud.google.com/sdk/docs/downloads-docker.
+so we will just [follow the documentation](https://cloud.google.com/sdk/docs/downloads-docker).
 
 Since we don't need additional components, we can just use the standard image 
 from google: 
@@ -116,10 +116,11 @@ Your current project is [None].  You can change this setting by running:
 As shown above, we should see a message telling us that we have successfully
 logged in.
 
-This will create a container named `gcloud-config` with a volume that will 
-persist the authentication and configuration data needed to run the `gcloud` commands. We will use this container later. 
-For this reason, please note that we didn't use the option `--rm`: the container should not be deleted after running 
-the command.
+This command will also create a container named `gcloud-config` with a volume that will 
+persist the authentication and configuration data we just set up. We will use this container later: 
+Every `gcloud` command that we run from now on, will use this container.
+For this reason, please note that we didn't use the option `--rm`: the container `gcloud-config` should not 
+be deleted after running the command.
 
 To try that everything is working, we will get the list of projects:
 
@@ -138,13 +139,13 @@ created above. It was stored in the container that we named as `gloud-config`, a
 option `--volumes-from gcloud-config`. With this option, we mount the volumes from the container named
 `gcloud-config` into the container running the `gcloud` command.
 
-Should you ever need to reset the authentication, just remove the container `glcoud-config` and recreate it
-using the command given above.
+Should you ever need to reset the authentication or the configuration, just remove the container `glcoud-config` and recreate it
+using the command that we fun before.
 
 
 ## Enable the container registry API
 
-Before we proceed, we need to 
+Once we are authenticated, we can start our journey. The first step will be to  
 [activate the container registry API](https://cloud.google.com/container-registry/docs/enable-service). 
 We will use the following command to do that:
 
@@ -161,17 +162,18 @@ If this API is not enabled for this project, we will not be able to push our ima
 
 ## Authentication to access the private registry.
 
-Now that we can run `gcloud` commands, and the container registry API us active, the last step before 
+The next thing we need to do before 
 pushing our image is to log in our docker client into the google container registry. Let's do that!
 
 According to [the documentation](https://cloud.google.com/container-registry/docs/advanced-authentication#methods), 
 the recommended way to log in into the private registry is to configure docker to use the 
 [gcloud credential helper](https://cloud.google.com/container-registry/docs/advanced-authentication#gcloud-helper).
 This is what we would do if we had installed the Google Cloud SDK directly in our computer. Since we're running `gcloud` 
-from inside a docker container, local docker command doesn't have access to the `gcloud` command because it's not
+from inside a docker container, our local docker commands don't have access to the `gcloud` command because it's not
 actually installed in our computer, and therefore, it won't work.
 
-For this reason we will use one of the alternative methods: [Access Token](https://cloud.google.com/container-registry/docs/advanced-authentication#token)
+For this reason we will use one of the alternative methods. In particular, we will use the 
+[Access Token method](https://cloud.google.com/container-registry/docs/advanced-authentication#token)
 
 In this method, we create a service account and use that service account to get a temporary access token
 that will allow us to push and pull images from the docker registry.
@@ -185,7 +187,7 @@ Let's create the service account:
     gcloud iam service-accounts create container-registry-read-write --project web-cursodegit-com
 ```
 
-Once create, we will check that the account is there:
+Once created, we will check that the account is there:
 
 ```bash
 > docker run -ti --rm \
@@ -232,11 +234,11 @@ etag: BwXELvWeR0c=
 version: 1
 ```
 
-Why "Storage Admin" and not "Storage Object Admin"? The container registry stores the images and it's layers in a bucket.
+Why did we chose "Storage Admin" and not "Storage Object Admin"? The container registry stores the images and it's layers in a bucket.
 That bucket is created the first time we push the image and, therefore, we need to have the necessary permissions to
 create it. The "Storage Admin" role has the permission `storage.buckets.create`, which is the one we need.
 
-Once the service account is in place, we need to create a key associated to the service account. Let's do that:
+Once the service account is in place, we need to create a key associated with the service account:
 
 ```bash
 % docker run -ti --rm \
@@ -251,7 +253,7 @@ created key [aaabcc588a41fba3b3966ca450c78e6f89b000d0] of type [json] as [keyfil
 
 The command `gcloud iam service-accounts keys create /workdir/keyfile.json` stores the key in the file 
 `/workdir/keyfile.json` inside the container. 
-We use a bind volume (see the argument `-v $(pwd):/workdir`) to mount our local file system in the `/workdir` folder 
+We use a bind volume (see the argument `-v $(pwd):/workdir`) to mount our local working directory in the `/workdir` folder 
 inside the container running the command. Doing this, we will persist the file `keyfile.json`
 in the local file system of our computer, and we will be able to use it later. 
 
@@ -261,7 +263,13 @@ Google Container Registry.
 
 ## Get the token and log in
 
-Once we have the key file, we need to follow this three steps very time we need to get a token:
+The access Token method that we are going to user works as follows:
+* We authenticate into Google Cloud using the service account and the file `keyfile.json`
+* We request a token
+* We use the token to log in our docker client into the Google Cloud Registry
+
+As I mentioned before, you will need the file `keyfile.json` every time we need to log in, se we need to find a
+secure way to store it. 
 
 **Authenticate using the service account:**
 
@@ -275,7 +283,7 @@ Once we have the key file, we need to follow this three steps very time we need 
 Activated service account credentials for: [container-registry-read-write@web-cursodegit-com.iam.gserviceaccount.com]
 ```
 
-We use the option `-v $(pwd):/workdir` to mount our local filesystem, the one that contains the `keyfile.json` file, 
+We use the option `-v $(pwd):/workdir` to mount our local working directory (which contains the `keyfile.json` file)
 inside the container's `/workdir` directory.
 
 **Get the access token**
@@ -324,10 +332,10 @@ That's it. We had to run a lot of long commands to get here, but we did it!
 ## Conclusions
 
 * If we run the Google Cloud SDK inside docker containers, we cannot use the Google Credentials Helper to log in
-  our docker client into the Google Container Registry
-* We need to use a different authentication method, which requires running more commands
+  our docker client into the Google Container Registry.
+* We need to use a different authentication method, which requires running more commands.
 * Also, we need to have a very clear understanding of how volumes and bind volumes work in docker to be able
-  to get the files in and out of the containers
+  to get the files in and out of the containers.
 * We need to type longer commands than those needed if we had installed the Google Cloud SDK locally. However, 
   we could easily reduce the verbosity of the commands by creating a simple bash wrapper script called `docker.sh` 
   with this code:
