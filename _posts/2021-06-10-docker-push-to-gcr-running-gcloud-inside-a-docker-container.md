@@ -11,7 +11,7 @@ excerpt: >-
   in our computer, we will run the gcloud commands from inside a docker container.
 cover_image_alt: "gcloud inside a docker container"  
 cover_image: "post_headers/containers_and_man_with_walkie_talkie.jpeg"
-image: "/assets/images/cards/git_worktrees_meetup_card.jpeg"   
+image: "/assets/images/cards/containers_and_man_with_walkie_talkie_card.jpeg"   
 ---
 
 ## TL;DR;
