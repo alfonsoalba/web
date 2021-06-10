@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Push docker images to Google Container Registry... running gcloud inside a docker container"
-date:   2021-06-04 09:00:00 +2000
+date:   2021-06-10 19:00:00 +2000
 categories:
   - "Google Cloud"
   - "docker"
