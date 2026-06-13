@@ -13,7 +13,8 @@ gem "jekyll", "~> 4.1"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima", "~> 2.0"
 #gem "jekyll-fssio-theme", git: 'https://github.com/fullstackstories/jekyll-fssio-theme.git', tag: '0.3'
-gem "jekyll-canvas-theme", path: '/usr/src/jekyll-canvas-theme'
+#gem "jekyll-canvas-theme", path: '/usr/src/jekyll-canvas-theme'
+gem "jekyll-canvas-theme", git: 'git@github.com:alfonsoalba/jekyll-canvas-theme.git'
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
