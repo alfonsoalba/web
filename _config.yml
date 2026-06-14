@@ -29,7 +29,7 @@ kramdown:
 theme: jekyll-canvas-theme
 plugins:
   - jekyll-feed
-  - jekyll-responsive-image
+  - jekyll_picture_tag
   - jekyll-seo-tag
 
 
@@ -39,15 +39,9 @@ permalink: /:year/:month/:day/:title:output_ext
 
 tiles_count: 4
 
-responsive_image:
-  template: _includes/srcset_resize_fallback_template.html
-  sizes:
-    - width: 480
-    - width: 600
-    - width: 800
-    - width: 1024
-    - width: 1200
-    - width: 1440
+picture:
+  source: assets/images
+  output: assets/images/generated
 
 canvas:
   body_class: stretched
@@ -64,6 +58,7 @@ facebook:
 # to override the default setting.
 exclude:
   - artwork/
+  - Brewfile
   - Gemfile
   - Gemfile.lock
   - node_modules
@@ -71,6 +66,7 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - vendor/
   - Dockerfile
   - docker-compose.yml
   - jekyll-website.code-workspace

@@ -84,18 +84,14 @@ It will open a browser window to authenticate you. If the browser window doesn't
 automatically, we will open one ourselves and copy and paste the URL provided by the previous
 command:
 
-{% 
-  responsive_image path: assets/images/posts/2021-06-10-docker-push-to-gcr-running-gcloud-inside-a-docker-container/allow-google-cloud-sdk.png
-%}
+{% picture "posts/2021-06-10-docker-push-to-gcr-running-gcloud-inside-a-docker-container/allow-google-cloud-sdk.png" %}
 
 As you can see, we are granting access to the Google Cloud SDK to perform some actions 
 in our Google Cloud account. We click on the "Allow" button. In the next screen we will see
 a code:
 
 
-{% 
-  responsive_image path: assets/images/posts/2021-06-10-docker-push-to-gcr-running-gcloud-inside-a-docker-container/google-cloud-sdk-code.png
-%}
+{% picture "posts/2021-06-10-docker-push-to-gcr-running-gcloud-inside-a-docker-container/google-cloud-sdk-code.png" %}
 
 
 We copy and paste the code in the CLI and press enter:

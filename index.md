@@ -32,13 +32,8 @@ list_title: Recent from the blog
 							<a href="{{ post.url | relative_url }}">
 								{% if post.cover_image %}
 								
-								{% assign cover_image_path = "assets/images/" | append: post.cover_image %}
-								{% responsive_image_block %}
-									path: {{ cover_image_path }}
-									alt: {{ post.cover_image_alt | default: post.title }}
-									template: "_includes/srcset_grid_image_template.html"
-
-								{% endresponsive_image_block %}    
+								{% assign cover_image_path = post.cover_image %}
+								{% picture "{{ cover_image_path }}" --alt {{ post.cover_image_alt | default: post.title }} %}    
 
 								{% else %}
 

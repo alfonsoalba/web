@@ -64,12 +64,12 @@ Insert the drive and open the `Disk Utility` application. Once opened, we go to 
 use the `CMD+2` shortcut). Once we can see all the volumes, we select the USB drive, right-click on it and select Erase
 in the secondary menu:
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/erase_usb_stick_with_mbr_step1.png %}
+{% picture "posts/2021-01-18-install-windows-10/erase_usb_stick_with_mbr_step1.png" %}
 
 In the dialog window we select the name of for the Drive (we will use BOOTCAMP), an `ExFAT` format and a `Master Boot Record`
 scheme:
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/erase_usb_stick_with_mbr_step2.png %}
+{% picture "posts/2021-01-18-install-windows-10/erase_usb_stick_with_mbr_step2.png" %}
 
 Wait while the drive is formatted and close the `Disk Utility` application once it's done.
 
@@ -81,7 +81,7 @@ Once the USB stick has been formatted, we will copy the Windows Support Software
 Open the `Boot Camp Assistant` application and select `Action -> Download Windows Support Software`. This will open the
 following dialog window in which we will select the BOOTCAMP drive:
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/bootcamp_assistant_support_software_download.png %}
+{% picture "posts/2021-01-18-install-windows-10/bootcamp_assistant_support_software_download.png" %}
 
 It can take a few minutes (12 minutes in our case) for the software to be downloaded and saved into the USB stick, so 
 have a little patience. 
@@ -92,7 +92,7 @@ There is an Apple support article describing this process [here](https://support
 
 Plug the SSD drive, open the `Disk Utility` application again and erase the drive using the following parameters:
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/prepare_ssd.png %}
+{% picture "posts/2021-01-18-install-windows-10/prepare_ssd.png" %}
 
 
 ## Prepare Virtual Box to install Windows
@@ -157,40 +157,40 @@ Once the `vmdk` file it's in place, we create a virtual machine to install windo
 
 Go to Machine -> New (or press CMD+N) and click the `Expert mode` in the dialog window that pops up:
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/virtual_box_expert_mode_step1.png %}
+{% picture "posts/2021-01-18-install-windows-10/virtual_box_expert_mode_step1.png" %}
 
 In the bottom of that screen, select the option "Use an existing virtual hard disk file" and click on the icon on the 
 right:
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/virtual_box_expert_mode_click_icon_to_select_vmdk_file.png %}
+{% picture "posts/2021-01-18-install-windows-10/virtual_box_expert_mode_click_icon_to_select_vmdk_file.png" %}
 
 This will open a new dialog window. We click on the `Add` icon on the top left:
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/virtual_box_dialog_to_add_the_vmdk_file.png %}
+{% picture "posts/2021-01-18-install-windows-10/virtual_box_dialog_to_add_the_vmdk_file.png" %}
 
 We browse and select the file `win10training.vmdk` that we created before:
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/virtual_box_expert_mode_add_dialog_with_vmdk_selected.png %}
+{% picture "posts/2021-01-18-install-windows-10/virtual_box_expert_mode_add_dialog_with_vmdk_selected.png" %}
 
 We select the `win10trainig.vmdk` file and click on choose to close the window. We will be back to the Expert mode window, in which
 we will enter a name for the virtual machine (Windows 10 Installation) and we will make sure that the machine
 will have enough RAM to run the installer. After that, we can click on create:
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/virtual_box_expert_mode_ready.png %}
+{% picture "posts/2021-01-18-install-windows-10/virtual_box_expert_mode_ready.png" %}
 
 We are almost there. The next step is to attach the iso image to the virtual machine. We select the machine on the left 
 and go to general settings:
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/virtual_box_click_on_general_settings.png %}
+{% picture "posts/2021-01-18-install-windows-10/virtual_box_click_on_general_settings.png" %}
 
 In the settings window, we go to storage and select the empty CD on the left and click on the small CD icon to the right 
 of the "Optical Drive" option. Then select the option  "Choose a disk file"
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/virtual_box_select_iso.png %}
+{% picture "posts/2021-01-18-install-windows-10/virtual_box_select_iso.png" %}
 
 We select the Windows 10 ISO file that we downloaded before. Without closing the settings window, we click on the "System"
 icon and activate the option "Enable EFI". Close the window.
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/virtual_box_efi_enabled.png %}
+{% picture "posts/2021-01-18-install-windows-10/virtual_box_efi_enabled.png" %}
 
 We are ready to install Windows 10!
 
@@ -208,21 +208,21 @@ It's time to start the installation of Windows 10. Power on the virtual machine 
 After you power on the virtual machine, we will need to press a key to boot from the virtual CD drive! Remember to
 do it or we will end up in a terminal shell and will need to reboot.
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/virtual_box_windows_installer_running.png %}
+{% picture "posts/2021-01-18-install-windows-10/virtual_box_windows_installer_running.png" %}
 
 We select English as the language and then we select the custom installation. When you are asked about the partition, we
 kept the EFI partition, removed the FAT partition that we created before and create a new partition using the installer.
 
 After doing that, continue answering the different questions of the installer until the installation begins:
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/virtual_box_windows_installing.png %}
+{% picture "posts/2021-01-18-install-windows-10/virtual_box_windows_installing.png" %}
 
 
 Continue the configuration and let the installer install windows. **⚠️ But do not let the installer restart, when the 
 installer is about to restart windows you should stop 
 the virtual machine. You have ten seconds before it restarts after the installation.⚠️**
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/virtual_box_do_not_restart.png %}
+{% picture "posts/2021-01-18-install-windows-10/virtual_box_do_not_restart.png" %}
 
 If you miss that and the virtual machine restarts, you will have to do it again.
 
@@ -245,7 +245,7 @@ we have a MacBook Pro 16' 2019 and we were fine with it.
 Restart and press CMD+R to start the macOS Recovery application. You might be requested to log in using a user from
 the local computer. Select a user with administration permissions and continue:
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/start_recovery_application.jpg %}
+{% picture "posts/2021-01-18-install-windows-10/start_recovery_application.jpg" %}
 
 After logging in, we go to `Utilities -> Startup Security Utility`. We will be prompted to enter an administrator password
 to proceed. This is the configuration that we are using to boot from the external drive:
@@ -255,12 +255,12 @@ to proceed. This is the configuration that we are using to boot from the externa
 * In the section `Secure Boot` we selected the option "No security", since Windows 10 is not an operating system trusted by apple.
 * In the section `Allowed Boot Media` we selected the option to allow booting from removable media.
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/startup_security_options.jpg %}
+{% picture "posts/2021-01-18-install-windows-10/startup_security_options.jpg" %}
 
 After setting this configuration, we close the macOS Recovery application and restart the computer while pressing the ALT key. 
 Since we activated the Firmware protection password, we get a prompt to enter it:
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/boot_locked.jpg %}
+{% picture "posts/2021-01-18-install-windows-10/boot_locked.jpg" %}
 
 
 **⚠️ Be aware that when you enter the password in this screen, the keyboard will be configured to be en english, so if the firmware 
@@ -271,7 +271,7 @@ puntuation symbols; it took us a few long minutes to realize this before we coul
 After unlocking the screen, we will be able to select the `EFI Boot` device and the installation of windows will
 continue.
 
-{% responsive_image path: assets/images/posts/2021-01-18-install-windows-10/select_efi_boot.jpg %}
+{% picture "posts/2021-01-18-install-windows-10/select_efi_boot.jpg" %}
 
 
 ## Boot from the drive and finish the installation

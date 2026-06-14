@@ -3,6 +3,7 @@
 ## Build, test, and lint commands
 
 ### Local Ruby/Jekyll workflow
+- Project Ruby is pinned to `3.4.9` (`mise.toml` + `Gemfile`), so prefer running commands via `mise exec -- ...` if your shell is not already using that version.
 - Install dependencies: `bundle install`  
   (Forestry uses `bundle install --path vendor/bundle`.)
 - Run the site locally: `bundle exec jekyll serve`
@@ -35,4 +36,5 @@
 - **Menu metadata drives navigation:** pages use front matter keys like `menu_title`, `menu_order`, and `hide_in_menu` (string value `"hide"`). Templates read these values when rendering menu links.
 - **Post front matter shape is important:** posts commonly define `categories` (YAML list), `excerpt`, `cover_image`, `cover_image_alt`, and `image`. Home/blog templates rely on these keys for cards and previews.
 - **Images are expected under `assets/images/` and rendered responsively:** templates use `{% picture %}` with presets in `_data/picture.yml` and a local post header override.
+- **`jekyll_picture_tag` dependency is direct:** use the Rubygems dependency declared in `Gemfile`; there is no vendored or submodule copy in `vendor/`.
 - **Cookie/analytics scripts are consent-gated:** scripts in `footer_scripts.html` are declared with `type="text/plain"` and app names that match entries in `assets/js/klaro_config.js`.

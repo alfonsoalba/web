@@ -1,0 +1,6 @@
+presets:
+  default:
+    markup: auto
+    formats: [original]
+    widths: [480, 600, 800, 1024, 1200, 1440]
+    fallback_width: 1440
