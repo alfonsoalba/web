@@ -71,3 +71,12 @@ exclude:
   - Dockerfile
   - docker-compose.yml
   - jekyll-website.code-workspace
+  - .agent/
+  - .claude/
+  - .codex/
+  - .gemini/
+  - .github/prompts/
+  - .github/skills/
+  - .opencode/
+  - openspec/
+
