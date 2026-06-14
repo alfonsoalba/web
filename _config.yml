@@ -61,6 +61,7 @@ exclude:
   - Brewfile
   - Gemfile
   - Gemfile.lock
+  - mise.toml
   - node_modules
   - vendor/bundle/
   - vendor/cache/
