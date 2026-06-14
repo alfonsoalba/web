@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+{%- if page.title -%}
+<div class="container clear-fix">
+    <h1 class="heading-block center">Posts</h1>
+</div>
+{%- endif -%}
+
+{%- if site.posts.size > 0 -%}
+
+<div class="container clear-fix">
+    <div id="posts" class="row gutter-30">
+        {%- for post in site.posts -%}
+        <div class="entry col-12">
+            <div class="grid-inner">
+                {%- if post.cover_image -%}
+                <div class="entry-image">
+                    <a href="{{ post.url | relative_url }}" data-lightbox="image">
+                        {% assign cover_image_path = post.cover_image %}
+                        {% picture "{{ cover_image_path }}" --alt {{ post.cover_image_alt | default: post.title }} %}
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="entry-title">
+                <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            </div>
+            
+            <div class="entry-meta">
+                {% include entry_meta.html post=post%}
+            </div>
+            {%- if site.show_excerpts -%}
+            <div class="entry-content">
+                <p>
+                {{ post.excerpt }}
+                </p>
+                
+                <a href="{{ post.url | relative_url }}" class="more-link">Read More</a>
+            </div>
+            {%- endif -%}            
+        </div>
+        {%- endfor -%}
+
+    </div>    
+</div>
+{%- endif -%}

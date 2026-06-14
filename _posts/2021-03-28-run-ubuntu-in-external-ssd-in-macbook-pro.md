@@ -88,13 +88,13 @@ follow the next steps:
 * On the left-hand pane, locate the drive for the USB Stick and right click on the drive
 * Select `Erase`
 
-{% responsive_image path: assets/images/posts/2021-03-22-install-ubuntu/disk-utility-partition-table-1.png %}
+{% picture "posts/2021-03-22-install-ubuntu/disk-utility-partition-table-1.png" %}
 
 * In the pop-up window select the MacOS Extended (Journaled) file system
 * Select the `GGUID Partition Table` scheme
 * Click on `Erase`  
 
-{% responsive_image path: assets/images/posts/2021-03-22-install-ubuntu/disk-utility-partition-table-2.png %}
+{% picture "posts/2021-03-22-install-ubuntu/disk-utility-partition-table-2.png" %}
 
 This will erase the drive, create an empty file system, and create the partition table that we need to boot from the
 USB drive.

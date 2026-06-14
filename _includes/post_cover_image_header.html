@@ -1,0 +1,6 @@
+{% contentfor page_title %}
+<section id="slider" class="slider-element mb-5">
+    {% assign cover_image_path = page.cover_image %}
+    {% picture "{{ cover_image_path }}" --alt {{ page.cover_image_alt | default: page.title }} %}
+</section>
+{% endcontentfor %}

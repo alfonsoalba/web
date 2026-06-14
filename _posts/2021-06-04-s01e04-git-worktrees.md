@@ -26,11 +26,7 @@ subscribe to the youtube channel of the
 [Madrid Git users group](https://www.youtube.com/channel/UCxrqcHQVPkwiNu_BOuZ4jdQ)
 or joining us in our [Meetup Group](https://www.meetup.com/Spanish-Git-Meetup/)!
 
-{% 
-  responsive_image path: assets/images/posts/2021-06-04-git-worktree-meetup/play-git-worktree-meetup-video.jpeg 
-                    link_to: https://www.youtube.com/watch?v=UxKY3b7ImOc&t=1434s
-                    target: _blank
-%}
+{% picture "posts/2021-06-04-git-worktree-meetup/play-git-worktree-meetup-video.jpeg" --link https://www.youtube.com/watch?v=UxKY3b7ImOc&t=1434s --a target="_blank" %}
 
 Links:
 * [Recorded session (YouTube)](https://www.youtube.com/watch?v=UxKY3b7ImOc&t=1434s)
