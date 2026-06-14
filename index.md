@@ -59,4 +59,9 @@ list_title: Recent from the blog
 	</div>
 </div>
 
+<div class="section mb-0 mt-0 pt-0 text-center">
+    <a href="{% link blog.html %}"> View all posts →</a>
+</div>
+
+
 {%- endif -%}
