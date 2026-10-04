@@ -10,40 +10,37 @@ menu_order: 2
 ## Who I am
 
 {: .container}
-My name is Alfonso. If you are reading this page my guess is that you want to know a little bit more
-about me. So, let's start with who I am.
-
-{: .container}
-In 2011, Morpheo showed me the road that I should start walking and [I took the red pill](https://matrix.fandom.com/wiki/Redpill) 
-(I really like this metaphor from The Matrix, because it describes rather well what
-happened to me at that point in my life).
-I realized I was lost and I decided to take the opportunity that Morpheo gave me to start a journey that I wasn't sure 
-where it would take me. I started walking hoping to find a destination. It took me a few more years to find out that 
-there was no destination, just walking, running or crawling down the road is all that matters. It's a road with 
-ups and downs, fear, pain, joy, tears... but at the end of the day a road worth walking.
-
-{: .container}
-Today, I wake up every day doing my best to walk down that road a little more. This is who I am.
+I'm Alfonso. I live in Madrid, I have a PhD in Physics, and I've spent the last twenty-odd years building software
+and teaching other people how to build it. I care about doing things well, explaining them clearly, and leaving
+teams better than I found them.
 
 {: .container}
 ## What I do for a living
 
 {: .container}
-I've been a full-stack web developer for about 15 years. In my first years I was using PHP. I switched to Ruby on Rails in
-2013 and have been using that technology since then.
+I'm an IT trainer and a software engineer, and I've been doing both for more than twenty years. I gave my first
+course in 2004 and I haven't stopped since: Linux, Solaris, Docker, Kubernetes and, above all, git. I've delivered
+more than 110 courses, more than 70 of them about git, and I created [Cursos de git](https://www.cursodegit.com) to
+help teams stop struggling with git and start using it like pros. If you want to know what I teach and how, have a
+look at my [training resume]({{ "/resume/training.html" | relative_url }}).
 
 {: .container}
-Nowadays, I'm working at the DevOps team of Platform161 with a group of amazing people.
+On the engineering side, I've worn quite a few hats over the years: full-stack developer, tech lead and CTO. I even
+tried to build my own company, which didn't work out, but I learned a lot from it.
 
 {: .container}
-I'm also an IT trainer/teacher. I've developed a [git course](https://www.cursodegit.com) that is helping a lot of 
-teams to stop struggling with git and start using it like pros!!
+From 2020 to 2022 I worked as a System Administrator and DevOps Engineer at Platform161 (now part of
+[Verve](https://verve.com)). From 2022 to 2026 I was at [RubiconMD](https://www.rubiconmd.com) (now part of
+[CVS Health](https://www.cvshealth.com)), where I grew through several roles: Senior Backend Engineer, Senior
+Engineering Manager and, finally, Senior Staff Software Engineer.
+
+{: .container}
+I'm currently open to new opportunities in engineering and training.
 
 {: .container}
 ## Other things about me
 
 {: .container}
-I like to **host rescued animals**. I live with my girlfriend, one dog rescued in 2010, a cat we found abandoned in 
-the street in October 2018 (she weighted 120 gr. back then) and another 5 months old rescued cat that join our family 
-in August 2020.
-
+I like to **host rescued animals**. I live with my girlfriend, a dog we rescued in 2010 and three cats: one we found
+abandoned in the street in October 2018 (she weighed 120 g back then), and two more rescued cats who joined our
+family in August 2020 and June 2021.

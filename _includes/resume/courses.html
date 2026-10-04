@@ -1,0 +1,61 @@
+{%- assign courses = include.resume.courses -%}
+{%- if courses -%}
+<section class="resume-courses">
+  <div class="fancy-title title-bottom-border"><h2>Courses</h2></div>
+  {%- if courses.intro %}
+  {{ courses.intro | t: include.lang | markdownify }}
+  {%- endif %}
+
+  {%- if courses.delivery and courses.delivery.size > 0 %}
+  <ul>
+    {%- for item in courses.delivery %}
+    <li><strong>{{ item.label | t: include.lang }}:</strong> {{ item.text | t: include.lang | inline_md }}</li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+
+  {%- for area in courses.areas %}
+  {%- if area.courses and area.courses.size > 0 %}
+  <h3 class="resume-area">{{ area.name | t: include.lang }}</h3>
+  <table class="table courses-table">
+    <thead>
+      <tr>
+        <th scope="col">Course</th>
+        <th scope="col">Hours</th>
+        <th scope="col">Status</th>
+        <th scope="col">Materials</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for course in area.courses %}
+      {%- assign status = course.status_note | t: include.lang | default: course.status %}
+      <tr>
+        <td data-label="Course">
+          <strong>{{ course.name | t: include.lang | inline_md }}</strong>
+          {%- if course.description %}<br>{{ course.description | t: include.lang | inline_md }}{% endif %}
+        </td>
+        <td data-label="Hours"{% unless course.hours %} class="courses-table-empty"{% endunless %}>{{ course.hours | default: "—" }}</td>
+        <td data-label="Status"{% unless status %} class="courses-table-empty"{% endunless %}>{% if status %}<span class="badge badge-secondary">{{ status }}</span>{% else %}—{% endif %}</td>
+        {%- if course.materials and course.materials.url %}
+        <td data-label="Materials"><a href="{{ course.materials.url }}">{{ course.materials.label | t: include.lang | default: course.materials.url }}</a></td>
+        {%- else %}
+        <td data-label="Materials" class="courses-table-empty">—</td>
+        {%- endif %}
+      </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+  {%- endif %}
+  {%- endfor %}
+
+  {%- if courses.on_request and courses.on_request.topics and courses.on_request.topics.size > 0 %}
+  <h3 class="topmargin-sm">On request</h3>
+  <p>{{ courses.on_request.topics | join: ", " }}.{% if courses.on_request.note %} {{ courses.on_request.note | t: include.lang | inline_md }}{% endif %}</p>
+  {%- endif %}
+
+  {%- if courses.previously_taught and courses.previously_taught.size > 0 %}
+  <h3>Previously taught</h3>
+  <p>{{ courses.previously_taught | join: ", " }}.</p>
+  {%- endif %}
+</section>
+{%- endif -%}

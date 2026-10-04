@@ -1,0 +1,63 @@
+{%- assign experience = include.resume.training_experience -%}
+{%- if experience and experience.size > 0 -%}
+<section class="resume-training-experience">
+  <div class="fancy-title title-bottom-border"><h2>Training experience</h2></div>
+  {%- for entry in experience %}
+  <div class="resume-entry">
+    <h3>
+      {{ entry.role | t: include.lang }}
+      {%- if entry.organisation -%}
+      , {% if entry.url %}<a href="{{ entry.url }}">{{ entry.organisation }}</a>{% else %}{{ entry.organisation }}{% endif %}
+      {%- endif %}
+    </h3>
+    {%- capture entry_meta -%}
+      {%- assign dates = entry.start | date_range: entry.end -%}
+      {%- if dates -%}<li>{{ dates }}</li>{%- endif -%}
+      {%- if entry.location -%}<li>{{ entry.location | t: include.lang }}</li>{%- endif -%}
+    {%- endcapture -%}
+    {%- if entry_meta != "" %}
+    <ul class="resume-inline resume-meta">{{ entry_meta }}</ul>
+    {%- endif %}
+
+    {%- if entry.highlights and entry.highlights.size > 0 %}
+    <ul>
+      {%- for highlight in entry.highlights %}
+      <li>{{ highlight | t: include.lang | inline_md }}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+
+    {%- if entry.sectors and entry.sectors.size > 0 %}
+    {%- capture sectors -%}{%- for sector in entry.sectors -%}{{ sector | t: include.lang }}{%- unless forloop.last -%}, {% endunless -%}{%- endfor -%}{%- endcapture %}
+    <p class="mb-2"><strong>Sectors:</strong> {{ sectors }}.</p>
+    {%- endif %}
+
+    {%- if entry.clients and entry.clients.size > 0 %}
+    <p class="mb-2"><strong>Clients include:</strong> {{ entry.clients | join: ", " }}.</p>
+    {%- endif %}
+
+    {%- if entry.periods and entry.periods.size > 0 %}
+    <ul>
+      {%- for period in entry.periods %}
+      {%- assign period_dates = period.start | date_range: period.end %}
+      <li>
+        {% if period_dates %}<strong>{{ period_dates }}:</strong> {% endif %}{{ period.summary | t: include.lang | inline_md }}
+        {%- if period.details and period.details.size > 0 %}
+        <ul>
+          {%- for detail in period.details %}
+          <li>{{ detail | t: include.lang | inline_md }}</li>
+          {%- endfor %}
+        </ul>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+
+    {%- if entry.summary %}
+    <p>{{ entry.summary | t: include.lang | inline_md }}</p>
+    {%- endif %}
+  </div>
+  {%- endfor %}
+</section>
+{%- endif -%}

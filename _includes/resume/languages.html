@@ -1,0 +1,16 @@
+{%- assign languages = include.resume.languages -%}
+{%- if languages -%}
+<section class="resume-languages">
+  <div class="fancy-title title-bottom-border"><h2>Languages</h2></div>
+  {%- if languages.spoken and languages.spoken.size > 0 %}
+  <ul>
+    {%- for item in languages.spoken %}
+    <li><strong>{{ item.language | t: include.lang }}</strong>{% if item.level %}: {{ item.level | t: include.lang }}{% endif %}</li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+  {%- if languages.course_delivery %}
+  <p>{{ languages.course_delivery | t: include.lang | inline_md }}.</p>
+  {%- endif %}
+</section>
+{%- endif -%}

@@ -1,0 +1,476 @@
+# yaml-language-server: $schema=./trainer.schema.json
+# Trainer CV, public data.
+# Suggested location: _data/cv/trainer.yml  ->  site.data.cv.trainer
+#
+# Conventions
+# - Translatable text is a map keyed by language: { en: "...", es: "..." }.
+#   Only "en" is filled in for now; add "es" next to it.
+# - Text fields accept inline Markdown (**bold**, *italic*, [text](url)).
+#   Quote any value that starts with * or contains ": ".
+# - Dates are quoted strings, "YYYY" or "YYYY-MM". end: null means "present".
+# - This file is PUBLIC. Client names that need permission go in a separate,
+#   git-ignored file (for example _data/cv/trainer_private.yml).
+
+meta:
+  version: 1
+  updated: "2026-10-03"
+  languages: [en, es]
+  default_language: en
+
+basics:
+  name: Alfonso Alba García
+  headline:
+    en: IT Trainer · Software and Platform Engineer
+  location:
+    en: Madrid, Spain
+  availability:
+    en: On-site in Spain and abroad, and remote
+  email: 
+  links:
+    - label: alfonsoalba.com
+      url: https://www.alfonsoalba.com
+    - label: LinkedIn
+      url: https://www.linkedin.com/in/alfonsoalbagarcia/
+    - label: GitHub
+      url: https://github.com/aalbagarcia
+
+profile:
+  en: >-
+    I have been training software teams since 2004, alongside a full
+    engineering career as developer, CTO, engineering manager and staff
+    engineer. I teach what I use in production: version control, containers,
+    Linux and, more recently, building software with AI coding assistants.
+    My courses are hands-on, delivered in Spanish or English, and adapted to
+    each team, and most of my course material is public. I hold a PhD in
+    Physics from Delft University of Technology.
+
+numbers:
+  - value: "22"
+    label:
+      en: years training IT professionals
+  - value: "110+"
+    label:
+      en: courses delivered
+  - value: "70+"
+    label:
+      en: Git courses since 2013, in person and remote
+  - value: "800+"
+    label:
+      en: professionals trained in Git
+
+courses:
+  intro:
+    en: >-
+      All courses are hands-on and tailored to the client. Durations are the
+      usual ones; shorter versions are available to fit the client's needs.
+  delivery:
+    - label:
+        en: Format
+      text:
+        en: in person, or remote on Google Meet, Microsoft Teams, Webex or Zoom.
+    - label:
+        en: Schedule
+      text:
+        en: flexible, from full-day sessions to three-hour sessions.
+    - label:
+        en: Group size
+      text:
+        en: up to 15 attendees.
+  areas:
+    - id: version-control
+      name:
+        en: Version control
+      courses:
+        - id: git
+          name:
+            en: "Git for development teams: from fundamentals to advanced workflows"
+          description:
+            en: For developers, system administrators and DevOps engineers at any level.
+          hours: 30
+          status: established
+          status_note:
+            en: "Established: 70+ courses since 2013"
+          materials:
+            label:
+              en: cursodegit.com
+            url: https://www.cursodegit.com
+        - id: jujutsu
+          name:
+            en: Jujutsu
+          hours: 25
+          status: new
+          status_note:
+            en: New, in preparation
+          materials: null
+    - id: platforms
+      name:
+        en: Containers, CI/CD and platforms
+      courses:
+        - id: docker
+          name:
+            en: Docker
+          hours: 25
+          status: delivered
+          status_note:
+            en: Delivered 2019–2022
+          materials:
+            label:
+              en: Slides and labs
+            url: https://docker-course.alfonsoalba.com/slides/index.html
+        - id: kubernetes
+          name:
+            en: Kubernetes for developers
+          hours: 25
+          status: delivered
+          status_note:
+            en: Delivered 2022
+          materials:
+            label:
+              en: Slides and labs
+            url: https://kubernetes-course.alfonsoalba.com/slides/index.html
+        - id: jenkins
+          name:
+            en: Introduction to Jenkins
+          hours: 25
+          status: delivered
+          status_note:
+            en: Delivered 2020
+          materials:
+            label:
+              en: Slides
+            url: https://jenkins-course.alfonsoalba.com/slides/index.html
+        - id: linux
+          name:
+            en: "Linux: administration, security and performance tuning"
+          hours: 25
+          status: returning
+          status_note:
+            en: Returning; taught 2005–2013, backed by years of running Linux in production
+          materials: null
+    - id: software-development
+      name:
+        en: Software development
+      courses:
+        - id: tdd
+          name:
+            en: Test-driven development
+          hours: 25
+          status: new
+          status_note:
+            en: New
+          materials: null
+    - id: ai-assisted-development
+      name:
+        en: AI-assisted development
+      courses:
+        - id: spec-driven-development
+          name:
+            en: Spec-driven development with OpenSpec
+          hours: 25
+          status: new
+          status_note:
+            en: New
+          materials: null
+        - id: harness-engineering
+          name:
+            en: Harness engineering and building applications with coding assistants
+          hours: 25
+          status: new
+          status_note:
+            en: New, in preparation
+          materials: null
+  on_request:
+    topics: [Ruby, Ruby on Rails, GitHub Actions]
+    note:
+      en: All of which I use in production work.
+  previously_taught:
+    - Solaris
+    - Perl
+    - PHP
+    - JavaScript
+    - jQuery
+    - Symfony 1 and 2
+    - Apache Tomcat
+    - Redis
+    - MongoDB
+    - AngularJS
+
+teaching_approach:
+  - title:
+      en: The attendees come first.
+    text:
+      en: >-
+        I measure a course by what people can do when it ends. I'm there to
+        help them learn, never to show how much I know.
+  - title:
+      en: Learning by doing.
+    text:
+      en: >-
+        Every course is built around labs, so attendees learn each tool by
+        using it on realistic exercises.
+  - title:
+      en: Difficult concepts in plain terms.
+    text:
+      en: I break hard topics into small steps, with examples, at the pace of the group.
+  - title:
+      en: Patient and calm.
+    text:
+      en: >-
+        Every question gets a proper answer, and I keep a classroom or a
+        video call steady when a session becomes tense.
+  - title:
+      en: A syllabus built from the client's needs.
+    text:
+      en: >-
+        Before a course I talk with the client, understand the team and its
+        problems, and turn that into a syllabus, the same work I did with
+        product requirements as an engineering manager.
+
+training_experience:
+  - id: cursos-de-git
+    role:
+      en: Founder and trainer
+    organisation: Cursos de git
+    url: https://www.cursodegit.com
+    location:
+      en: Madrid
+    start: "2012-12"
+    end: null
+    highlights:
+      - en: >-
+          Specialised Git training for development teams, in person and
+          remote, with tools such as GitHub, GitLab, Bitbucket and Sourcetree.
+      - en: >-
+          Every course starts with a consulting session to assess the team
+          and define the syllabus, and includes follow-up support after the
+          course.
+      - en: Consulting on Git adoption and migrations from Subversion.
+      - en: More than 70 courses since 2013, most of them contracted directly by the client.
+      - en: "Many clients come back: several organisations have booked five or more courses over the years."
+    sectors:
+      - en: banking and insurance
+      - en: energy and industrial equipment
+      - en: logistics automation
+      - en: food and retail
+      - en: hosting
+      - en: IT consulting
+      - en: online media and marketplaces
+      - en: universities and research centres
+      - en: public administration
+    clients:
+      - Arsys
+      - Ormazabal
+      - CBCenter
+      - EMC Learning Consulting
+      - Redes Formación y Consultoría
+      - Accio3
+
+  - id: freelance
+    role:
+      en: Freelance IT trainer
+    organisation: null
+    location:
+      en: Madrid
+    start: "2004-01"
+    end: null
+    periods:
+      - start: "2019"
+        end: "2022"
+        summary:
+          en: >-
+            Docker, Kubernetes, Jenkins and Redis for system administrators,
+            for clients in banking, hosting and energy equipment. Public
+            slides and hands-on labs for Docker and Kubernetes.
+      - start: "2013"
+        end: "2014"
+        summary:
+          en: >-
+            Solaris 11 administration, advanced SUSE Linux administration,
+            and introductions to MongoDB and AngularJS.
+      - start: "2005"
+        end: "2012"
+        summary:
+          en: About 30 courses delivered through Professional Training and other training providers.
+        details:
+          - en: >-
+              Linux system administration: about 20 courses for IT services
+              companies, the automotive industry, consulting firms and public
+              administration.
+          - en: Linux security for an automotive manufacturing plant, and Linux performance tuning.
+          - en: >-
+              Solaris 9 and 10 administration, Perl, PHP with AJAX and
+              JavaScript, Symfony 2 and Apache Tomcat.
+
+engineering_experience:
+  - id: rubiconmd
+    organisation: RubiconMD
+    location:
+      en: Remote
+    start: "2022-05"
+    end: "2026-05"
+    roles:
+      - title:
+          en: Senior Staff Software Engineer
+        start: "2024-05"
+        end: "2026-05"
+      - title:
+          en: Senior Engineering Manager
+        start: "2022-08"
+        end: "2024-05"
+      - title:
+          en: Senior Backend Engineer
+        start: "2022-05"
+        end: "2022-08"
+    highlights:
+      - en: >-
+          Designed and delivered the partner API that now carries 80% of the
+          eConsults created on the platform, on time, owning it from product
+          requirements to documentation for external teams.
+      - en: >-
+          Took part in the adoption of AI coding assistants across
+          engineering and helped write the guidelines for using them well.
+      - en: >-
+          Built a new team from scratch, growing it from four to six
+          engineers, and made it the owner of one of the most critical parts
+          of the system, replacing dependence on a single engineer.
+      - en: Helped plan the multi-year migration of the application from version 1 to version 2.
+
+  - id: platform161
+    organisation: Platform161
+    location:
+      en: Madrid
+    start: "2020-04"
+    end: "2022-04"
+    roles:
+      - title:
+          en: System Administrator and DevOps Engineer
+    summary:
+      en: >-
+        Test automation for Ruby on Rails and Angular applications with
+        Jenkins, on-demand staging environments with Jenkins and Ansible, and
+        Google Cloud infrastructure.
+
+  - id: extremadura-com
+    organisation: Extremadura.com
+    location:
+      en: Madrid
+    start: "2010-04"
+    end: "2020-01"
+    roles:
+      - title:
+          en: CTO
+    summary:
+      en: >-
+        Technical lead and manager of a team of six developers and designers.
+        Web applications in Symfony 1 and Zend Framework (PHP) and in Ruby on
+        Rails, test and deployment automation with Jenkins, and Docker for
+        all Rails projects.
+
+  - id: nerium-volatt
+    organisation: Nerium Tecnología Aplicada and Volatt
+    location:
+      en: Madrid
+    start: "2004-12"
+    end: "2010"
+    roles:
+      - title:
+          en: Founder
+    summary:
+      en: >-
+        Founded Nerium, which merged into Volatt from 2005 to 2009. Web
+        application development in PHP, IT consulting, and deployment and
+        remote administration of Linux servers, including Beowulf and LVS
+        clusters.
+
+  - id: ica
+    organisation: ICA
+    location:
+      en: Madrid
+    start: "2004-10"
+    end: "2005-02"
+    roles:
+      - title:
+          en: Junior Developer
+    summary:
+      en: Software development in C under Linux.
+
+talks_and_community:
+  - type: community
+    text:
+      en: >-
+        Organiser since 2013 of the Grupo de usuarios de git (Madrid), a
+        meetup group with more than 1,000 members. Recorded sessions on the
+        group's [YouTube channel](https://www.youtube.com/@GrupodeusuariosdegitMadrid)
+        have more than 21,000 views.
+  - type: talk
+    title:
+      en: Git worktrees
+    venue:
+      en: Grupo de usuarios de git
+    date: "2021-06"
+    link:
+      label:
+        en: Recording and slides
+      url: https://www.alfonsoalba.com/2021/06/03/s01e04-git-worktrees.html
+  - type: talk
+    title:
+      en: .gitignore in depth
+    venue:
+      en: OpenExpo, Madrid
+    date: "2016-06"
+  - type: talk
+    title:
+      en: "Git: workflows and tools for collaborative work"
+    venue:
+      en: Joint session with HTML5 Spain, Madrid
+    date: "2015-10"
+  - type: publication
+    text:
+      en: Aprende git, a blog about Git, 2012 – 2020.
+
+education:
+  - title:
+      en: LLM Zoomcamp
+    institution: DataTalks.Club
+    year: "2026"
+    status: completed
+    url: https://certificate.datatalks.club/llm-zoomcamp/2026/8942731f50334144efc598c07d1b796ef54ab331.pdf
+  - title:
+      en: Exploratory Data Analysis for Machine Learning
+    institution: IBM (Coursera)
+    year: "2026"
+    status: completed
+    url: https://coursera.org/share/708c4db6b36e0dccfb371252ae5f28e6
+  - title:
+      en: AI Dev Tools Zoomcamp
+    institution: DataTalks.Club
+    year: null
+    status: in_progress
+  - title:
+      en: Machine Learning Zoomcamp
+    institution: DataTalks.Club
+    year: null
+    status: in_progress
+  - title:
+      en: PhD in Physics
+    institution: Delft University of Technology
+    year: "2003"
+    status: completed
+  - title:
+      en: Licenciatura (5-year degree) in Physics
+    institution: Universidad Autónoma de Madrid
+    year: "1999"
+    status: completed
+
+languages:
+  spoken:
+    - language:
+        en: Spanish
+      level:
+        en: native
+    - language:
+        en: English
+      level:
+        en: fluent
+  course_delivery:
+    en: Courses delivered in Spanish and English

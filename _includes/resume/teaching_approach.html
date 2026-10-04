@@ -1,0 +1,11 @@
+{%- assign approach = include.resume.teaching_approach -%}
+{%- if approach and approach.size > 0 -%}
+<section class="resume-teaching-approach">
+  <div class="fancy-title title-bottom-border"><h2>Teaching approach</h2></div>
+  <ul>
+    {%- for item in approach %}
+    <li><strong>{{ item.title | t: include.lang | inline_md }}</strong>{% if item.text %} {{ item.text | t: include.lang | inline_md }}{% endif %}</li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif -%}
