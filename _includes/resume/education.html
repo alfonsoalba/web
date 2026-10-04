@@ -1,0 +1,19 @@
+{%- assign education = include.resume.education -%}
+{%- if education and education.size > 0 -%}
+<section class="resume-education">
+  <div class="fancy-title title-bottom-border"><h2>Education</h2></div>
+  <ul>
+    {%- for item in education %}
+    {%- capture details -%}
+      {%- if item.institution -%}<li>{{ item.institution }}</li>{%- endif -%}
+      {%- if item.status == "in_progress" -%}<li>In progress</li>{%- elsif item.year -%}<li>{{ item.year }}</li>{%- endif -%}
+      {%- if item.url -%}<li><a href="{{ item.url }}">Certificate</a></li>{%- endif -%}
+    {%- endcapture %}
+    <li>
+      <strong>{{ item.title | t: include.lang | inline_md }}</strong>
+      {%- if details != "" %} <ul class="resume-inline d-inline">{{ details }}</ul>{% endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif -%}

@@ -1,0 +1,23 @@
+{%- assign basics = include.resume.basics -%}
+{%- if basics -%}
+<section class="resume-header topmargin-sm">
+  <h1 class="mb-2">{{ basics.name }}</h1>
+  {%- if basics.headline %}
+  <p class="lead mb-2">{{ basics.headline | t: include.lang | inline_md }}</p>
+  {%- endif %}
+  {%- capture meta -%}
+    {%- if basics.location -%}<li>{{ basics.location | t: include.lang }}</li>{%- endif -%}
+    {%- if basics.availability -%}<li>{{ basics.availability | t: include.lang | inline_md }}</li>{%- endif -%}
+  {%- endcapture -%}
+  {%- if meta != "" %}
+  <ul class="resume-inline resume-meta">{{ meta }}</ul>
+  {%- endif %}
+  {%- if basics.links and basics.links.size > 0 %}
+  <ul class="resume-inline">
+    {%- for link in basics.links %}
+    <li><a href="{{ link.url }}">{{ link.label | t: include.lang }}</a></li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+</section>
+{%- endif -%}

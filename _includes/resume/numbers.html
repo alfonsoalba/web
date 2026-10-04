@@ -1,0 +1,13 @@
+{%- assign numbers = include.resume.numbers -%}
+{%- if numbers and numbers.size > 0 -%}
+<section class="resume-numbers">
+  <div class="row">
+    {%- for number in numbers %}
+    <div class="col-6 col-md-3 mb-4">
+      <div class="resume-number">{{ number.value }}</div>
+      <div>{{ number.label | t: include.lang }}</div>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif -%}

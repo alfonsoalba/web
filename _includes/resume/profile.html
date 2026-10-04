@@ -1,0 +1,7 @@
+{%- assign profile = include.resume.profile | t: include.lang -%}
+{%- if profile -%}
+<section class="resume-profile">
+  <div class="fancy-title title-bottom-border"><h2>Profile</h2></div>
+  {{ profile | markdownify }}
+</section>
+{%- endif -%}

@@ -1,0 +1,40 @@
+{%- assign experience = include.resume.engineering_experience -%}
+{%- if experience and experience.size > 0 -%}
+<section class="resume-engineering-experience">
+  <div class="fancy-title title-bottom-border"><h2>Engineering experience</h2></div>
+  {%- for entry in experience %}
+  <div class="resume-entry">
+    <h3>{% if entry.url %}<a href="{{ entry.url }}">{{ entry.organisation }}</a>{% else %}{{ entry.organisation }}{% endif %}</h3>
+    {%- capture entry_meta -%}
+      {%- assign dates = entry.start | date_range: entry.end -%}
+      {%- if dates -%}<li>{{ dates }}</li>{%- endif -%}
+      {%- if entry.location -%}<li>{{ entry.location | t: include.lang }}</li>{%- endif -%}
+    {%- endcapture -%}
+    {%- if entry_meta != "" %}
+    <ul class="resume-inline resume-meta">{{ entry_meta }}</ul>
+    {%- endif %}
+
+    {%- if entry.roles and entry.roles.size > 0 %}
+    <ul class="list-unstyled mb-2">
+      {%- for role in entry.roles %}
+      {%- assign role_dates = role.start | date_range: role.end %}
+      <li><strong>{{ role.title | t: include.lang }}</strong>{% if role_dates and entry.roles.size > 1 %} <span class="resume-meta">({{ role_dates }})</span>{% endif %}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+
+    {%- if entry.highlights and entry.highlights.size > 0 %}
+    <ul>
+      {%- for highlight in entry.highlights %}
+      <li>{{ highlight | t: include.lang | inline_md }}</li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+
+    {%- if entry.summary %}
+    <p>{{ entry.summary | t: include.lang | inline_md }}</p>
+    {%- endif %}
+  </div>
+  {%- endfor %}
+</section>
+{%- endif -%}
