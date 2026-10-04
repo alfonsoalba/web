@@ -57,6 +57,17 @@ Each include is passed the resume object and wraps its whole output in `{% if %}
 ### 5. Badges with the existing Bootstrap 4 class
 Every course status uses `<span class="badge badge-secondary">`, the same for all statuses (see the spec). No new CSS is needed beyond a small amount of spacing in a `<style>` block or an inline class in the layout, if needed.
 
+### 5a. Courses as a responsive table, clear heading levels
+Added after the first visual review, because course areas (h3) and course names (h4) looked too alike.
+- Each course area is a `<table class="table courses-table">` with columns Course (name + description), Hours, Status and Materials. Courses without materials show an em dash.
+- Below Bootstrap's `md` breakpoint (768px), CSS scoped to `.courses-table` hides the header row and stacks each row into a block. Cells keep their label through a `data-label` attribute, and the em dash is hidden. One piece of markup works for both sizes.
+- Section headings (h2) use Canvas's `fancy-title title-bottom-border` (theme-coloured underline). Course area headings use a small uppercase, letter-spaced label style, so the levels are easy to tell apart.
+
+*Alternatives:*
+- Two copies of the markup toggled with `d-none d-md-table` / `d-md-none`. No custom CSS, but every course is duplicated.
+- A `list-group` for every screen size. Simpler, but the columns don't line up on desktop.
+- Bootstrap's `.table` alone, without the `courses-table` class. The stacking CSS would then affect every table on the site.
+
 ### 6. Email left out by design
 The header include renders `name`, `headline`, `location`, `availability` and `links` only. `basics.email` is never referenced in any template.
 
